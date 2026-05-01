@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Kunz - Resume 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap'); /* Monospace for tech numbers */
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #555; /* Dark background for web viewing contrast */
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        /* Container for the 2-page layout */
+        .document {
+            width: 8.5in;
+        }
+
+        .page {
+            background: white;
+            width: 8.5in;
+            height: 11in; 
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            display: grid;
+            grid-template-columns: 30% 70%;
+            overflow: hidden;
+            position: relative; /* Critical for absolute positioning of flair */
+        }
+
+        /* ============================
+           FLAIR / EDGE STYLING
+           ============================ */
+
+        /* LEFT FLAIR: Command Strip */
+        .flair-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background: #1e2c4c;
+            z-index: 10;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Red accents on the left strip */
+        .flair-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #c41e3a;
+        }
+        .flair-left::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: #c41e3a;
+        }
+
+        /* RIGHT FLAIR: Engineering/Calibration Scale */
+        .flair-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 24px;
+            background-color: #f9f9f9;
+            z-index: 10;
+            border-left: 1px solid #ccc;
+            /* Create the ruler ticks using CSS gradients */
+            background-image: 
+                linear-gradient(#999 1px, transparent 1px),
+                linear-gradient(#ccc 1px, transparent 1px);
+            background-size: 
+                10px 50px, /* Major tick every 50px */
+                6px 10px;  /* Minor tick every 10px */
+            background-position: 
+                0 0,
+                0 0;
+            background-repeat: repeat-y;
+        }
+
+        /* Add small tech numbers to the right ruler */
+        .tech-marker {
+            position: absolute;
+            right: 2px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 5pt;
+            color: #999;
+            transform: rotate(-90deg);
+            transform-origin: center right;
+        }
+
+        /* CORNER CROSSHAIRS (Top Right / Bottom Right) */
+        .crosshair-tr {
+            position: absolute;
+            top: 15px;
+            right: 35px; /* Inset from the ruler */
+            width: 20px;
+            height: 20px;
+            border-top: 1px solid #c41e3a;
+            border-right: 1px solid #c41e3a;
+            opacity: 0.6;
+        }
+        .crosshair-br {
+            position: absolute;
+            bottom: 10px;
+            right: 35px;
+            width: 20px;
+            height: 20px;
+            border-bottom: 1px solid #1e2c4c;
+            border-right: 1px solid #1e2c4c;
+            opacity: 0.6;
+        }
+
+        /* ============================
+           STANDARD RESUME CONTENT
+           ============================ */
+
+        /* --- SIDEBAR (Left Column) --- */
+        .sidebar {
+            background: #1e2c4c;
+            color: white;
+            padding: 30px 20px 30px 30px; /* Increased left padding to clear the flair */
+            font-size: 9pt;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Grid removed here */
+
+        .sidebar h2 {
+            font-size: 11pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 10px;
+            padding-bottom: 3px;
+            color: #c41e3a;
+            margin-top: 25px;
+            position: relative; 
+        }
+
+        .sidebar h2:first-child { margin-top: 0; }
+
+        .contact-info { margin-bottom: 25px; position: relative; }
+        .contact-item { display: block; margin-bottom: 8px; font-size: 9pt; opacity: 0.95; }
+        .contact-item span { margin-right: 5px; }
+
+        .side-list { list-style: none; margin-bottom: 15px; position: relative; }
+        .side-list li {
+            margin-bottom: 6px;
+            padding-left: 12px;
+            position: relative;
+            font-weight: 300;
+            font-size: 9pt;
+            line-height: 1.35;
+        }
+        .side-list li::before {
+            content: '•';
+            color: #c41e3a;
+            position: absolute;
+            left: 0;
+        }
+        .side-list li strong { font-weight: 600; color: #fff; }
+
+        /* Tech Tags */
+        .tech-category {
+            font-size: 9pt;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ddd;
+            margin-top: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: 8.5pt;
+        }
+
+        /* --- MAIN CONTENT (Right Column) --- */
+        .main {
+            padding: 35px 45px 35px 35px; /* Increased right padding to clear the ruler flair */
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            border-bottom: 2px solid #1e2c4c;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #1e2c4c;
+            letter-spacing: -1px;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .job-title-header {
+            font-size: 14pt;
+            color: #c41e3a;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #1e2c4c;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
+
+        .job-block { margin-bottom: 20px; }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .company { font-weight: 700; font-size: 11.5pt; color: #1e2c4c; }
+        .location { font-weight: 400; font-size: 9.5pt; color: #666; font-style: italic; }
+
+        .role-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .role-title { font-weight: 600; color: #c41e3a; font-size: 10.5pt; }
+        .date { font-size: 9.5pt; font-weight: 500; color: #555; }
+
+        .bullets { list-style: none; margin-top: 6px; }
+        .bullets li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 10pt;
+            text-align: justify;
+        }
+        .bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #c41e3a;
+        }
+        .bullets strong { font-weight: 600; color: #000; }
+
+        .summary p { 
+            font-size: 10pt; 
+            color: #333; 
+            margin-bottom: 20px; 
+            text-align: justify; 
+            line-height: 1.5;
+        }
+
+        /* Print Specifics */
+        @media print {
+            body { background: white; margin: 0; padding: 0; display: block; }
+            .document { margin: 0; width: 100%; }
+            .page { 
+                box-shadow: none; 
+                margin: 0; 
+                page-break-after: always;
+                width: 100%;
+                height: 100vh;
+            }
+            .page:last-child { page-break-after: auto; }
+            
+            /* Ensure background graphics print */
+            .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .flair-left, .flair-right { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document">
+        
+        <div class="page">
+            <div class="flair-left"></div>
+            <div class="flair-right">
+                <div class="tech-marker" style="top: 50px;">REF-01</div>
+                <div class="tech-marker" style="top: 250px;">SYS-A</div>
+                <div class="tech-marker" style="bottom: 100px;">RD-V2</div>
+            </div>
+            <div class="crosshair-tr"></div>
+            <div class="crosshair-br"></div>
+
+            <aside class="sidebar">
+                <div class="contact-info">
+                    <div class="contact-item">📍 Pleasant Hill, MO 64080</div>
+                    <div class="contact-item">✉️ ethan.douglas.kunz@gmail.com</div>
+                    <div class="contact-item">📱 417-920-6774</div>
+                </div>
+
+                <h2>Education</h2>
+                <div style="margin-bottom: 15px;">
+                    <div style="font-weight:600; font-size:9.5pt;">MBA (4.0 GPA)</div>
+                    <div style="font-size:9pt; opacity:0.8;">LeTourneau University</div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <div style="font-weight:600; font-size:9.5pt;">B.S. Electrical Engineering</div>
+                    <div style="font-size:9pt; opacity:0.8;">Missouri S&T (Cum Laude)</div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <div style="font-weight:600; font-size:9.5pt;">Biomedical Equip Tech (BMET)</div>
+                    <div style="font-size:9pt; opacity:0.8;">Comm. College of the Air Force</div>
+                </div>
+
+                <h2>Certifications</h2>
+                <ul class="side-list">
+                    <li><strong>Active Security Clearance</strong> (Issued Jun 2020)</li>
+                    <li><strong>Knowledge Mgmt</strong> (SOUTHCOM)</li>
+                    <li><strong>Forklift/Aerial Manlift</strong> (Southland)</li>
+                    <li><strong>Confined/Open Water Diving</strong> (PADI)</li>
+                    <li><strong>US Customs Border Agent</strong></li>
+                </ul>
+
+                <h2>Key Awards</h2>
+                <ul class="side-list">
+                    <li><strong>5 BRAVO Awards</strong> (Honeywell)</li>
+                    <li><strong>2 Patent Disclosures</strong> (Li-Fi)</li>
+                    <li><strong>Army Commendation Medal</strong></li>
+                    <li><strong>Army Achievement Medal</strong></li>
+                    <li><strong>SGM Coin</strong> (Expert Marksmanship)</li>
+                </ul>
+            </aside>
+
+            <main class="main">
+                <header>
+                    <h1>ETHAN KUNZ</h1>
+                    <div class="job-title-header">Engineering Leader | R&D Prototyping</div>
+                </header>
+
+                <div class="summary">
+                    <p>
+                        Engineering Leader and R&D specialist with a decade of high-stakes technical experience—ranging from the extreme industrial environments of steel manufacturing to leading national security programs at Honeywell/KCNSC. Driven by a "servant-leader" philosophy, I thrive in high-pressure Quick React Contract (QRC) environments where agility and precision are paramount. A hands-on innovator passionate about the entire product lifecycle, I bridge the gap between strategic program management and deep technical execution, from board-level design and firmware programming to final system delivery.
+                    </p>
+                </div>
+
+                <h3 class="section-title">Professional Experience</h3>
+
+                <div class="job-block">
+                    <div class="job-header">
+                        <span class="company">Honeywell FM&T / KCNSC</span>
+                        <span class="location">Kansas City, MO</span>
+                    </div>
+                    <div class="role-row">
+                        <span class="role-title">Senior Electrical Engineer (Prev: EE III, EE II)</span>
+                        <span class="date">May 2020 – Present</span>
+                    </div>
+                    <ul class="bullets">
+                        <li><strong>Strategic Leadership:</strong> Served as the primary technical lead for Special Projects, directing the execution of multi-million dollar pulse power initiatives. Orchestrated the full lifecycle of complex systems, contributing thousands of direct engineering hours to ensure critical national security milestones were met on time and under budget.</li>
+                        
+                        <li><strong>QRC Success:</strong> Executed a high-intensity Quick React Contract (QRC), coordinating a cross-functional team through 11-hour workdays to manufacture, test, and deliver 30 full-scale systems within a strict multi-month window. In a separate critical QRC, personally executed hundreds of hours of software testing in under two weeks, identifying and resolving fatal errors that saved 50% of the product deliverable.</li>
+
+                        <li><strong>R&D Innovation:</strong> Proactively seized control of a strategic <strong>six-figure R&D project</strong> as electrical lead. Drove a major collaboration with Micro-Electronics that resulted in novel designs and three alternate functional prototypes beyond the original scope.</li>
+                        
+                        <li><strong>Program Modernization:</strong> Spearheaded the design and testing modernization for three legacy NNSA components, successfully navigating nine distinct milestones past Final Design Review (FDR). Managed the complete design hand-off, ensuring all technical data packages met rigorous quality standards for long-term manufacturability.</li>
+                        
+                        <li><strong>Mentorship & Training:</strong> Technical lead for a significant six-figure bi-annual training program, coordinating 50+ internal personnel and executive sponsors. Successfully cross-trained 7 teammates for critical roles by developing curriculum and justifying budget allocations to sponsors.</li>
+                        
+                        <li><strong>Efficiency Engineering:</strong> Architected a security-compliant local network setup for a CMM room, saving an estimated <strong>thousands of labor hours</strong> ($1M+ value) by streamlining data transfer workflows.</li>
+                        
+                        <li><strong>Patents:</strong> Led R&D across 5 projects, resulting in <strong>2 patent disclosures</strong> in Li-Fi technology.</li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+        <div class="page">
+            <div class="flair-left"></div>
+            <div class="flair-right">
+                <div class="tech-marker" style="top: 50px;">REF-02</div>
+                <div class="tech-marker" style="top: 400px;">SPEC-X</div>
+                <div class="tech-marker" style="bottom: 100px;">QA-PASS</div>
+            </div>
+            <div class="crosshair-tr"></div>
+            <div class="crosshair-br"></div>
+
+            <aside class="sidebar">
+                <h2>Technical Expertise</h2>
+            
+                <div class="tech-category">Embedded & MCUs</div>
+                <div class="tech-tags">
+                    <span class="tag">C++</span> <span class="tag">C#</span> <span class="tag">Python</span>
+                    <span class="tag">VBA</span> <span class="tag">ESP32</span> <span class="tag">STM32</span> 
+                    <span class="tag">MSP TI</span> <span class="tag">RP2040</span> <span class="tag">Teensy</span>
+                    <span class="tag">Beaglebone</span> <span class="tag">Atmega</span>
+                    <span class="tag">Sensor Fusion</span>
+                </div>
+    
+                <div class="tech-category">Hardware & Tools</div>
+                <div class="tech-tags">
+                    <span class="tag">Altium</span> <span class="tag">KiCad</span> <span class="tag">LTSpice</span>
+                    <span class="tag">Logic 2.4</span> <span class="tag">Mentor Graphics</span>
+                    <span class="tag">Pulse Power</span> <span class="tag">High-Voltage</span>
+                    <span class="tag">Fiber Optics</span> <span class="tag">Pneumatics</span>
+                    <span class="tag">Hydraulics</span>
+                </div>
+    
+                <div class="tech-category">Industrial Controls</div>
+                <div class="tech-tags">
+                    <span class="tag">PLC (Siemens/AB)</span> <span class="tag">HMI/VFD</span>
+                    <span class="tag">FactoryTalk</span> <span class="tag">Wonderware</span>
+                    <span class="tag">Proficy</span> <span class="tag">Controllogix</span>
+                    <span class="tag">Safety Critical Systems</span>
+                </div>
+    
+                <div class="tech-category">IDEs & Management</div>
+                <div class="tech-tags">
+                    <span class="tag">Visual Studio</span> <span class="tag">Keil</span>
+                    <span class="tag">STM32Cube</span> <span class="tag">JIRA</span> 
+                    <span class="tag">MS Project</span> <span class="tag">Budgeting</span>
+                </div>
+    
+                <div class="tech-category">AI & Modern Stack</div>
+                <div class="tech-tags">
+                    <span class="tag">Docker</span> <span class="tag">n8n</span>
+                    <span class="tag">Ollama</span> <span class="tag">CUDA</span>
+                    <span class="tag">SQL</span> <span class="tag">HTML/JS</span>
+                    <span class="tag">Local LLMs</span>
+                </div>
+
+                <h2>Community</h2>
+                <ul class="side-list">
+                    <li><strong>FIRST Robotics Judge</strong> (2022–Present)</li>
+                    <li><strong>Hogar Nazareth</strong> (Honduras Volunteer)</li>
+                    <li><strong>CFC Manager</strong> (Fundraising Lead)</li>
+                    <li><strong>Dream Center</strong> (Homeless Outreach)</li>
+                </ul>
+            </aside>
+
+            <main class="main">
+                <div class="job-block" style="margin-top: 0;">
+                    <div class="job-header">
+                        <span class="company">Nucor Corporation</span>
+                        <span class="location">Longview, TX & Blytheville, AR</span>
+                    </div>
+                    <div class="role-row">
+                        <span class="role-title">Electrical Projects Lead</span>
+                        <span class="date">Dec 2019 – Apr 2020</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Directed electrical modernization projects across three departments (200 personnel) at a massive 100,000 ton/year plate steel facility.</li>
+                        <li><strong>Key Projects:</strong> Integration of a new steel Quench process, full redesign of the power feed system for 9 heavy industrial furnaces, and implementation of a modern ABB drive system to replace aging infrastructure.</li>
+                    </ul>
+                    <div class="role-row" style="margin-top:10px;">
+                        <span class="role-title">Industrial Electrical Technician</span>
+                        <span class="date">May 2018 – Dec 2019</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Worked grueling 12-hour rotating shifts as the sole electrical technician responsible for the rolling mill and finishing departments, maintaining uptime in extreme environmental conditions.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-header">
+                        <span class="company">Global Rescue Systems</span>
+                        <span class="location">Columbia, MO</span>
+                    </div>
+                    <div class="role-row">
+                        <span class="role-title">Electrical Design Engineer</span>
+                        <span class="date">Aug 2017 – Mar 2018</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Operated as a non-profit consultant designing ruggedized life-saving devices.</li>
+                        <li>Developed prototypes for field systems used in disaster relief scenarios.</li>
+                    </ul>
+                </div>
+
+                <h3 class="section-title">Military Service</h3>
+                
+                <div class="job-block">
+                    <div class="job-header">
+                        <span class="company">US Army Reserves</span>
+                        <span class="location">MO & Honduras</span>
+                    </div>
+                    <div class="role-row">
+                        <span class="role-title">Biomedical Equipment Technician (E5)</span>
+                        <span class="date">May 2011 – Jun 2021</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Served 10 years (including active duty) in critical leadership roles: <strong>1st Platoon Sergeant</strong> (leading 22 soldiers) and <strong>NCOIC of Biomedical Section</strong> (managing 8 technicians).</li>
+                        <li><strong>Deployment Impact:</strong> Completed a 9-month deployment to Honduras supporting JTF-B. Served as Subject Matter Expert (SME) for the U.S. Embassy and drafted CAD layouts for a hospital expansion project.</li>
+                        <li><strong>Logistics Optimization:</strong> Acquired and organized 100+ technical manuals to streamline maintenance operations, earning the Army Achievement Medal.</li>
+                        <li><strong>Innovation:</strong> Redesigned duct ports during "Operation Appalachia Care," saving the unit tens of thousands of dollars. Designed and fabricated an optical phoropter counterbalance that significantly increased patient throughput (Army Commendation Medal).</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-header">
+                        <span class="company">Co-ops & Internships</span>
+                    </div>
+                    <ul class="bullets">
+                        <li><strong>Nucor-Yamato Steel (2016):</strong> Electrical Engineering Intern.</li>
+                        <li><strong>Nucor Steel Texas (2015):</strong> Electrical Engineering Intern.</li>
+                    </ul>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

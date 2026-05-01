@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ethan Kunz — Senior Embedded Systems & Electrical Engineer. MBA, B.S. EE (Cum Laude). Specialist in Hardware Design, Firmware, Pulse Power, and Edge AI. Proven technical leader for mission-critical engineering projects.">
+    <meta name="author" content="Ethan Kunz">
+    <meta property="og:title" content="Ethan Kunz — Senior Embedded Systems & Electrical Engineer">
+    <meta property="og:description" content="Senior EE with a decade of experience in embedded systems, PCB design, pulse power, and industrial automation. MBA, B.S. EE, Active DOE Security Clearance.">
+    <meta property="og:type" content="website">
+    <title>Ethan Kunz — Senior Embedded Systems & Electrical Engineer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        html { scroll-behavior: smooth; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #0d1227 0%, #1a1f3a 100%);
+            overflow-x: hidden;
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #ffffff;
+            box-shadow: 0 0 60px rgba(0,0,0,0.3);
+            position: relative;
+            border-radius: 8px;
+            overflow: visible;
+            z-index: 1;
+        }
+        
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, #c41e3a 0%, #c41e3a 40%, #1e2c4c 60%, #1e2c4c 100%);
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1e2c4c 0%, #2c3e5f 100%);
+            color: white;
+            padding: 45px 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #header-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            font-size: 46px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(
+                135deg,
+                #b8c6db 0%,
+                #f5f7fa 25%,
+                #ffffff 50%,
+                #f5f7fa 75%,
+                #b8c6db 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            background-size: 200% auto;
+            position: relative;
+            animation: metallicShine 6s ease-in-out infinite;
+        }
+
+        @keyframes metallicShine {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .header .title {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            opacity: 0.95;
+            text-transform: uppercase;
+        }
+
+        .download-btn {
+            background-color: #c41e3a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background-color: #a3182f;
+            transform: translateY(-2px);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 16px;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            opacity: 0.9;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            border-bottom-color: white;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 35px 50px;
+            position: relative;
+            background: #ffffff;
+            transition: background 0.3s ease;
+        }
+
+        .section:nth-child(even) {
+            background: #fafbfc;
+        }
+
+        /* Active section on hover - enhance headers */
+        .section.active-section.section-hovered .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(30, 44, 76, 0.2);
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        .section.active-section.section-hovered .competency-group h4,
+        .section.active-section.section-hovered .company-name,
+        .section.active-section.section-hovered .position-name,
+        .section.active-section.section-hovered .tech-category h4,
+        .section.active-section.section-hovered .award-category h4 {
+            font-size: 120%;
+            font-weight: 700;
+            color: #1e2c4c;
+            transition: all 0.3s ease;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e2c4c;
+            border-bottom: 2px solid #1e2c4c;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title.competencies {
+             justify-content: flex-start;
+        }
+        
+        /* Glowing star icon */
+        .section-icon-2d {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .icon-star {
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 20px solid #c41e3a;
+            position: relative;
+            box-shadow: 0 0 15px rgba(196,30,58,0.8);
+        }
+
+        .icon-star::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 20px solid #c41e3a;
+            position: absolute;
+            top: 8px;
+            left: -12px;
+        }
+
+        /* Title Animation */
+        .animate-title {
+            animation: highlight-expand 0.8s ease-out forwards;
+        }
+
+        @keyframes highlight-expand {
+            0% {
+                transform: scale(1);
+                color: #1e2c4c;
+            }
+            50% {
+                transform: scale(1.05);
+                color: #c41e3a;
+            }
+            100% {
+                transform: scale(1);
+                color: #1e2c4c;
+            }
+        }
+        
+        /* Professional Summary */
+        .summary-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #2c3e50;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #c41e3a;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        .summary-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07), 0 0 20px rgba(30, 44, 76, 0.3);
+        }
+        
+        .summary-content p {
+            margin-bottom: 15px;
+        }
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Competencies Section Styles */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background: #f8f9fa;
+        }
+
+        .competencies-grid:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 20px rgba(30, 44, 76, 0.3);
+        }
+        
+        .competency-group {
+            position: relative;
+        }
+
+        .competency-group h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e2c4c;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+             
+        .competency-group ul { list-style: none; padding: 0; }
+        
+        .competency-group li {
+            padding: 5px 0 5px 20px;
+            position: relative;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+            line-height: 1.7;
+        }
+        
+        .competency-group li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            color: #c41e3a;
+            font-weight: bold;
+        }
+
+        .competency-group li strong {
+            color: #34495e;
+            font-weight: 600;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(30, 44, 76, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 5px;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 20px rgba(30, 44, 76, 0.3);
+        }
+        
+        .experience-item:last-child { 
+            border-bottom: none; 
+            padding-bottom: 0; 
+            margin-bottom: 0;
+        }
+        
+        .company-header { margin-bottom: 15px; }
+        
+        .company-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .company-location {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+        
+        .position-block { margin-bottom: 18px; }
+        .position-block:last-child { margin-bottom: 0; }
+        
+        .position-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .position-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #34495e;
+        }
+        
+        .position-date {
+            font-size: 16px;
+            color: #7f8c8d;
+            font-style: italic;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+        
+        .achievements { list-style: none; padding: 0; }
+        
+        .achievements li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .achievements li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            color: #c41e3a;
+            font-weight: bold;
+        }
+        
+        .achievements li.list-header {
+            padding-left: 8px;
+            padding-top: 10px;
+            list-style: none;
+        }
+    
+        .achievements li.list-header:before {
+            content: none;
+        }
+        
+        .achievements li.indented-li {
+            padding-left: 45px;
+        }
+    
+        .achievements li.indented-li:before {
+            left: 25px;
+        }
+
+        .achievements li strong { color: #2c3e50; font-weight: 500; }
+        .achievements li em { color: #34495e; font-style: italic; }
+        
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background: #f8f9fa;
+        }
+
+        .education-grid:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 20px rgba(30, 44, 76, 0.3);
+        }
+        
+        .education-item { padding: 15px 0; border-bottom: 1px solid rgba(30, 44, 76, 0.1); }
+        .education-item:last-child { border-bottom: none; }
+        
+        .degree {
+            font-size: 18px;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .gpa { color: #c41e3a; font-weight: 500; margin-left: 10px; }
+        .school { font-size: 16px; color: #7f8c8d; }
+        
+        /* Technical Expertise */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background: #f8f9fa;
+        }
+
+        .tech-grid:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 20px rgba(30, 44, 76, 0.3);
+        }
+        
+        .tech-category h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e2c4c;
+            margin-bottom: 15px;
+        }
+        .skill { margin-bottom: 15px; }
+        .skill-name { display: block; margin-bottom: 5px; color: #555; }
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #1e2c4c, #2c3e5f);
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+        
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background: #f8f9fa;
+        }
+
+        .awards-grid:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 20px rgba(30, 44, 76, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .awards-grid { 
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            }
+        }
+        
+        .award-category h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .award-category ul { list-style: none; padding: 0; }
+        .award-category li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        .award-category li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            color: #c41e3a;
+        }
+        .award-category li em {
+            display: block;
+            margin-left: -20px;
+            padding-left: 20px;
+            font-size: 0.95em;
+            color: #34495e;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .resume-container { margin: 0; border-radius: 0; }
+            .header { padding: 30px; }
+            .header-top { flex-direction: column; gap: 20px; }
+            .section { padding: 25px 30px; }
+            .header h1 { font-size: 36px; }
+            .contact-info { flex-direction: column; gap: 10px; }
+            .competencies-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Video section */
+        .video-container {
+            width: 100%;
+            aspect-ratio: 9/8;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body { background: white; }
+            .resume-container { box-shadow: none; margin: 0; border-radius: 0; max-width: 100% !important; }
+            .download-btn, #edge-particles, .nav-sidebar, .back-to-top { display: none !important; }
+            #lab-video-section { display: none !important; }
+            .header {
+                background: #1e2c4c !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .section:nth-child(even) {
+                background: #fafbfc !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .experience-item:hover { transform: none; box-shadow: none; }
+            .animate-title { animation: none; transform: none; color: #1e2c4c !important; }
+            [data-aos] { opacity: 1 !important; transform: none !important; }
+
+            /* Every section starts on its own page */
+            .section {
+                page-break-before: always;
+            }
+
+            /* Override the responsive 1fr so grids stay multi-column in print */
+            .competencies-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            /* Comprehensive Skills — compact 4-column grid for PDF */
+            #comprehensive-skills-section {
+                page-break-inside: avoid;
+                padding: 20px 30px !important;
+            }
+            #comprehensive-skills-section .section-title {
+                margin-bottom: 12px;
+            }
+            #comprehensive-skills-section .competencies-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 10px 16px;
+                padding: 10px;
+            }
+            #comprehensive-skills-section .competencies-grid:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            #comprehensive-skills-section .competency-group h4 {
+                font-size: 11px;
+                margin-bottom: 6px;
+                padding-bottom: 3px;
+            }
+            #comprehensive-skills-section .competency-group li {
+                font-size: 10px;
+                padding: 1px 0 1px 12px;
+                line-height: 1.4;
+                margin-bottom: 1px;
+            }
+            #comprehensive-skills-section .competency-group li:before {
+                top: 2px;
+                font-size: 10px;
+            }
+        }
+
+        /* --- Floating Navigation --- */
+        .nav-sidebar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .nav-sidebar.visible { opacity: 1; }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+            border: 2px solid rgba(196,30,58,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-dot:hover, .nav-dot.active {
+            background: #c41e3a;
+            border-color: #c41e3a;
+            transform: scale(1.3);
+        }
+        .nav-dot .nav-label {
+            position: absolute;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(30,44,76,0.95);
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+        .nav-dot:hover .nav-label { opacity: 1; }
+
+        /* --- Back to Top Button --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 24px;
+            z-index: 100;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #c41e3a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 42px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+            pointer-events: none;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            background: #a3182f;
+            transform: translateY(-2px);
+        }
+
+        /* --- Skip Link (a11y) --- */
+        .skip-link:focus {
+            left: 10px !important;
+            top: 10px !important;
+            width: auto !important;
+            height: auto !important;
+            overflow: visible !important;
+            border-radius: 4px;
+        }
+
+        /* --- Edge Particles Canvas --- */
+        #edge-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        /* --- End Edge Particles Canvas --- */
+    </style>
+</head>
+<body>
+    <a href="#summary-section" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:200;background:#c41e3a;color:#fff;padding:10px 20px;font-size:16px;text-decoration:none;">Skip to content</a>
+    <!-- Minimal edge particle canvas -->
+    <canvas id="edge-particles" aria-hidden="true"></canvas>
+
+    <!-- Floating Navigation Dots -->
+    <nav class="nav-sidebar" aria-label="Section navigation">
+        <div class="nav-dot" data-target="summary-section"><span class="nav-label">Summary</span></div>
+        <div class="nav-dot" data-target="competencies-section"><span class="nav-label">Competencies</span></div>
+        <div class="nav-dot" data-target="experience-section"><span class="nav-label">Experience</span></div>
+        <div class="nav-dot" data-target="leadership-section"><span class="nav-label">Technical Lead</span></div>
+        <div class="nav-dot" data-target="workstyle-section"><span class="nav-label">Lab & Style</span></div>
+        <div class="nav-dot" data-target="military-section"><span class="nav-label">Military</span></div>
+        <div class="nav-dot" data-target="education-section"><span class="nav-label">Education</span></div>
+        <div class="nav-dot" data-target="certs-section"><span class="nav-label">Certifications</span></div>
+        <div class="nav-dot" data-target="skills-section"><span class="nav-label">Skills</span></div>
+        <div class="nav-dot" data-target="ai-projects-section"><span class="nav-label">Lab Projects</span></div>
+        <div class="nav-dot" data-target="awards-section"><span class="nav-label">Awards</span></div>
+        <div class="nav-dot" data-target="volunteer-section"><span class="nav-label">Volunteer</span></div>
+        <div class="nav-dot" data-target="lab-video-section"><span class="nav-label">Lab</span></div>
+    </nav>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+    <div class="resume-container" id="resume-to-print">
+        <header class="header">
+            <canvas id="header-canvas" aria-hidden="true"></canvas>
+            <div class="header-content">
+                <div class="header-top">
+                    <div>
+                        <h1>ETHAN KUNZ</h1>
+                        <div class="title">Senior Embedded Systems & Electrical Engineer</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <a class="download-btn" id="download-pdf-btn" title="Download as PDF">Download PDF</a>
+                        <img src="assets/KCNSC-logo.jpg" alt="KCNSC Logo" style="display: block; margin-top: 15px; max-width: 150px;">
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <span>📍 Pleasant Hill, MO 64080</span>
+                    <span>📱 cell: on request </span>
+                    <span>📞 office: on request </span>
+                    <span>✉️ ethan.douglas.kunz@gmail.com</span>
+                </div>
+            </div>
+        </header>
+        
+        <section class="section" id="summary-section" data-aos="fade-up">
+            <h2 class="section-title summary-title">Professional Summary</h2>
+            <div class="summary-content">
+                <p>Senior Electrical Engineer specializing in <strong>Embedded Systems, PCB Design, and High-Power Electronics</strong> for mission-critical applications. From national security-grade design at Honeywell FM&T to extreme industrial automation at Nucor, I deliver end-to-end hardware solutions: schematic capture, mixed-signal layout (Altium/KiCad), firmware (C/C++, Python), and full-scale validation. I run a <strong>fully equipped personal laboratory</strong> (Saleae Pro 16, Metcal ultrasonic soldering, hot-flow rework) where prototypes are <strong>built and tested—not just simulated.</strong> Whether delivering nuclear-quality boards, niche power solutions, or edge AI systems, I bridge the gap between complex requirements and production-ready hardware.</p>
+            </div>
+        </section>
+
+        <section class="section" id="competencies-section" data-aos="fade-up">
+            <h2 class="section-title competencies">Core Competencies</h2>
+            <div class="competencies-grid">
+                <div class="competency-group">
+                     <h4>Embedded Systems & MCUs</h4>
+                    <ul>
+                        <li>Firmware Dev (C/C++, Python, Rust)</li>
+                        <li>ESP32, STM32, RP2040, TI MSP430</li>
+                        <li>Real-time Operating Systems (RTOS)</li>
+                        <li>I2C, SPI, UART, CAN, Ethernet</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                     <h4>Hardware Design (EDA)</h4>
+                    <ul>
+                        <li>PCB Design & Layout (Altium, KiCad)</li>
+                        <li>Mixed-Signal & Analog Circuit Design</li>
+                        <li>LTSpice Simulation & Validation</li>
+                        <li>High-Voltage & Pulsed Power Systems</li>
+                    </ul>
+                </div>
+                 <div class="competency-group">
+                     <h4>AI, ML & Signal Processing</h4>
+                    <ul>
+                        <li>Edge AI Inference (TensorFlow Lite, ST)</li>
+                        <li>Sensor Fusion & Gesture Recognition</li>
+                        <li>Digital Signal Processing (DSP)</li>
+                        <li>mmWave Radar Integration</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Industrial & Systems Engineering</h4>
+                   <ul>
+                       <li>PLC Programming & Industrial Controls</li>
+                       <li>Full Program Lifecycle Management</li>
+                       <li>V-Model Systems Engineering</li>
+                       <li>Rapid Prototyping & QRC Delivery</li>
+                   </ul>
+               </div>
+            </div>
+        </section>
+        
+        <section class="section" id="experience-section" data-aos="fade-up">
+            <h2 class="section-title experience">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">Honeywell FM&T / KCNSC<span class="company-location">Kansas City, MO</span></div>
+                </div>
+                
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Senior Electrical Engineer</span>
+                        <span class="position-date">May 2024 – Present</span>
+                    </div>
+                    <div class="position-title" style="margin-top: -10px;">
+                        <span class="position-name">Electrical Engineer III</span>
+                        <span class="position-date">May 2022 – May 2024</span>
+                    </div>
+                    <div class="position-title" style="margin-top: -10px; margin-bottom: 20px;">
+                        <span class="position-name">Electrical Engineer II</span>
+                        <span class="position-date">May 2020 – May 2022</span>
+                    </div>
+                    
+                    <ul class="achievements">
+                        <li>Serves as a lead technical and project engineer for multi-million dollar <strong>pulse power initiatives</strong>, managing the design, implementation, and successful delivery of high-stakes national security systems.</li>
+
+                        <li class="list-header"><strong>Technical Design & R&D Excellence:</strong></li>
+                        <li>Proactively spearheaded a strategic R&D effort as the electrical lead, collaborating with Micro-Electronics to develop <strong>novel Li-Fi communication designs</strong> and three functional, high-performance prototypes.</li>
+                        <li>Architected and executed the end-to-end design of multiple pulse power systems, from initial concept and <strong>EDA-based simulation (LTSpice/Altium)</strong> through Final Design Review (FDR) and mission-ready product delivery.</li>
+                        <li>Modernized testing and design for three legacy national security components, delivering full technical data packages and ensuring long-term mission reliability through nine distinct milestones.</li>
+                        <li>Led research and development across 5 projects, applying DFSS Green Belt methodologies to produce <strong>3 patent disclosures</strong> in Li-Fi technology and software firesets, with 1 patent released by Honeywell for mmWave radar technology.</li>
+
+                        <li class="list-header"><strong>System Integration & Rapid Prototyping:</strong></li>
+                        <li>Advanced firmware development across multiple architectures including <strong>STM32, Renesas RA, and RP2350.</strong></li>
+                        <li>Rescued a high-priority Special Projects program by <strong>debugging and resolving critical software defects</strong>, filling a key technical gap and saving weeks of troubleshooting to keep a rapid delivery on schedule.</li>
+                        <li>Executed an intense QRC (Quick Reaction Capability) to manufacture and test 30 full-scale systems, personally conducting over 200 hours of testing to save 50% of the deliverable under tight deadlines.</li>
+                        <li>Mentored junior engineers by integrating them directly into hardware/software development workflows, including unit testing for major QRC deliveries, while ensuring adherence to high-reliability standards.</li>
+                        <li>Developed a security-compliant local network architecture for CMM workflows, <strong>streamlining data transfer</strong> and saving thousands of labor hours on multi-million dollar projects.</li>
+
+                        <li class="list-header"><strong>Technical Project Oversight:</strong></li>
+                        <li>Orchestrated technical execution across the pulse power portfolio, ensuring resource forecasts and technical roadmaps remained aligned with shifting mission requirements.</li>
+                        <li>Directly secured follow-on multi-million dollar projects by delivering high-quality results on complex technical tasks (e.g., TTN-&gt;HSH initiatives).</li>
+                        <li>Maintains a deep understanding of full product lifecycle management, ensuring technical integrity from prototype development through industrial-scale production.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">Nucor Corporation<span class="company-location">Longview, TX & Blytheville, AR</span></div>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Electrical Projects Lead</span>
+                        <span class="position-date">Dec 2019 – Apr 2020</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Directed electrical modernization projects across <strong>three departments (200 personnel)</strong> at a massive 100,000 ton/year plate steel facility — coordinating staffing, equipment requirements, and budget proposals for each initiative.</li>
+                        <li><strong>Key Projects:</strong> Integration of a new steel Quench process, full redesign of the power feed system for 9 heavy industrial furnaces, and implementation of a modern ABB drive system — improving quality, productivity, and operational surety.</li>
+                    </ul>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Industrial Electrical Technician</span>
+                        <span class="position-date">May 2018 – Dec 2019</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Worked grueling 12-hour rotating shifts as the sole electrical technician responsible for the rolling mill and finishing departments, maintaining uptime in extreme environmental conditions. This was on top of performing the role of Projects Lead in between lead technical production work.</li>
+                    </ul>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Co-op/Internship</span>
+                        <span class="position-date">May 2015-Dec 2015; May 2016-Sep 2016</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">Global Rescue Systems<span class="company-location">Columbia, MO</span></div>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Electrical Design Engineer</span>
+                        <span class="position-date">Aug 2017 – Mar 2018</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Non-profit consultant designing ruggedized life-saving devices for first responders and the Coast Guard.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="leadership-section" data-aos="fade-up">
+            <h2 class="section-title leadership">Technical Project Leadership</h2>
+            <div class="summary-content" style="margin-bottom: 30px;">
+                Approach: A technical-first leader who sets the standard for implementation excellence. I combine high-level strategic oversight with hands-on mastery in board-level design, firmware development, and system integration to ensure mission success and technical integrity.
+            </div>
+            <div class="competencies-grid">
+                <div class="competency-group">
+                     <h4>Technical Oversight & Excellence</h4>
+                    <ul>
+                        <li>Lead multi-disciplinary teams in high-reliability hardware/software development projects, from initial concept to final deployment.</li>
+                        <li>Maintain technical accountability for mission-critical systems, ensuring all design and implementation steps meet stringent quality standards.</li>
+                        <li>Developed technical talent by creating hands-on training for critical program roles — ensuring teams could execute on complex pulse power and communication projects.</li>
+                        <li>Advocate for rigorous engineering practices, including comprehensive unit testing, simulation-driven design, and meticulous documentation.</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                     <h4>Strategic Problem Solving</h4>
+                    <ul>
+                        <li>Cross-pollinate ideas across science and engineering domains (e.g., material science, micro-electronics) to seed new R&D concepts and rapid prototyping initiatives.</li>
+                        <li>Translate complex organizational requirements into clear, actionable technical roadmaps for engineering teams.</li>
+                        <li>Bridge the gap between hardware and software teams to ensure seamless system integration and optimal performance.</li>
+                        <li>Experienced in re-baselining projects when technical challenges arise, ensuring continued progress and stakeholder confidence.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="workstyle-section" data-aos="fade-up">
+            <h2 class="section-title work-style">Work Style & Technical Assets</h2>
+            <div class="competencies-grid">
+                <div class="competency-group">
+                     <h4>Professional In-House Lab</h4>
+                    <ul>
+                        <li><strong>Built and Tested—Not Just Simulated:</strong> Maintains a professional lab for rapid prototyping and validation of high-reliability hardware.</li>
+                        <li><strong>Equipment:</strong> Saleae Pro 16 logic analyzers, Metcal ultrasonic soldering, hot-flow rework stations, 4K digital microscope with manipulator set.</li>
+                        <li><strong>Instrumentation:</strong> High-precision bench power supplies, spectrum analyzers, and a deep inventory of dev kits (STM32, Renesas, RP2350).</li>
+                        <li><strong>Capabilities:</strong> Mixed-signal PCB assembly, hot-air rework, fine-pitch soldering, and real-time logic/protocol debugging.</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                     <h4>High-Fidelity Engineering</h4>
+                    <ul>
+                        <li><strong>Technical Authority:</strong> Hands-on mastery from schematic capture through multi-layer PCB layout to firmware deployment.</li>
+                        <li><strong>Rapid Turnaround:</strong> Specialized in Quick Reaction Capability (QRC) for evolving hardware requirements and mission-critical timelines.</li>
+                        <li><strong>Infrastructure:</strong> Deploys local AI (Ollama, CUDA) and automation (n8n) to accelerate hardware/firmware co-design.</li>
+                        <li><strong>Quality Assurance:</strong> Nuclear-grade design standards applied to every build, ensuring DFM/DFA for seamless contract manufacturing.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section page-break" id="military-section" data-aos="fade-up">
+            <h2 class="section-title military">Military Service</h2>
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">US Army Reserves<span class="company-location">Kansas City, MO & Honduras</span></div>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Biomedical Equipment Technician (E5)</span>
+                        <span class="position-date">May 2011 – Jun 2021</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Served 10 years (including active duty) in critical leadership roles:</li>
+                        <li class="indented-li"><strong>1st Platoon Sergeant (2020 – 2021):</strong> Led and oversaw a platoon of 22 soldiers.</li>
+                        <li class="indented-li"><strong>NCOIC of Biomedical Section (Feb 2018 – Jun 2021):</strong> Managed a section of 8 technicians.</li>
+                        <li><strong>Deployment Impact:</strong> Completed a 9-month deployment to Honduras supporting JTF-B. Served as Subject Matter Expert (SME) for the U.S. Embassy and drafted CAD layouts for a hospital expansion project.</li>
+                        <li>Coordinated missions, funding, scheduling, training, and personnel operations for the 325th Combat Hospital.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="education-section" data-aos="fade-up">
+            <h2 class="section-title education">Education</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="degree">Master of Business Administration<span class="gpa">GPA: 4.0/4.0</span></div>
+                    <div class="school">LeTourneau University | Longview, TX </div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Science, Electrical Engineering<span class="gpa">Cum Laude</span></div>
+                    <div class="school">Missouri University of Science and Technology | Rolla, MO </div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Biomedical Technician Certification (BMET)<span class="gpa">&gt;95%</span></div>
+                    <div class="school">Medical Education and Training Campus, CCAF | Fort Sam Houston, TX </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="certs-section" data-aos="fade-up">
+            <h2 class="section-title technical">Licenses & Certifications</h2>
+            <div class="awards-grid">
+                <div class="award-category" style="grid-column: 1 / -1;">
+                    <ul>
+                        <li><strong>Active</strong> (Issuer: United States Federal Government, Renewed: Jun 2025, Expires: 2030)</li>
+                        <li><strong>Bio-medical Equipment Technician</strong> (Issuer: METC, Issued: Aug 2012, Credential ID: 4B-F2/198-68A10)</li>
+                        <li><strong>U.S. Customs Border Clearance Agent</strong> (Issuer: United States Department of War, Issued: Feb 2017)</li>
+                        <li><strong>Knowledge Management</strong> (Issuer: SOUTHCOM Certified)</li>
+                        <li><strong>Forklift and Aerial Manlift Operator</strong> (Issuer: Southland Safety, LLC., Issued: Jun 2018)</li>
+                        <li><strong>Confined and Open Water Diving</strong> (Issuer: PADI, Issued: Feb 2017)</li>
+                        <li><strong>Military Drivers License (Humvee, M35)</strong> (Issuer: US Army, Issued: Jan 2019)</li>
+                        <li><strong>Range Safety Officer (RSO)</strong> (Issuer: A CO Det. 1 US ARMY 325th CSH, Issued: Jan 2019)</li>
+                        <li><strong>DFSS Green Belt Lean Six Sigma</strong> (Issuer: KCNSC, Issued: 2020)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-aos="fade-up" id="skills-section">
+            <h2 class="section-title technical">Technical Expertise (Snapshot)</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h4>Technical Management</h4>
+                    <div class="skill">
+                        <span class="skill-name">Staff Development, Hiring & Training </span>
+                        <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Budgeting, Staffing & Resource Forecasting </span>
+                        <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Quality & Data Analytics</h4>
+                    <div class="skill">
+                        <span class="skill-name">Statistical Process Control & Quality Metrics </span>
+                        <div class="skill-bar"><div class="skill-level" data-level="75%"></div></div>
+                    </div>
+                     <div class="skill">
+                        <span class="skill-name">Data Visualization (Python, VBA, SQL) </span>
+                        <div class="skill-bar"><div class="skill-level" data-level="70%"></div></div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Engineering Disciplines</h4>
+                     <div class="skill">
+                        <span class="skill-name">Pulsed Power & High-Voltage Systems </span>
+                        <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Embedded Systems (ESP/STM/MSP) </span>
+                        <div class="skill-bar"><div class="skill-level" data-level="75%"></div></div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Program & Project Tools</h4>
+                    <div class="skill">
+                        <span class="skill-name">PM Methodologies (JIRA, MS Project) </span>
+                        <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
+                    </div>
+                     <div class="skill">
+                        <span class="skill-name">Hardware Design (Altium, KiCad, LTSpice) </span>
+                        <div class="skill-bar"><div class="skill-level" data-level="65%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section page-break" id="comprehensive-skills-section" data-aos="fade-up">
+            <h2 class="section-title competencies">Comprehensive Skills & Expertise</h2>
+            <div class="competencies-grid">
+                <div class="competency-group">
+                    <h4>Management & Leadership</h4>
+                    <ul>
+                        <li>Direct Supervision & Staff Development</li>
+                        <li>Complex Program & Project Management</li>
+                        <li>Staffing Plans & Resource Forecasting</li>
+                        <li>Technical Writing, Training & Curriculum Development</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Data Analytics & Quality</h4>
+                    <ul>
+                        <li>Statistical Modeling & Process Control</li>
+                        <li>Data Visualization (Python, SQL, VBA)</li>
+                        <li>Business Metrics & Quality Assurance</li>
+                        <li>MS SQL Server, T-SQL, MySQL</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Software & Programming</h4>
+                    <ul>
+                        <li>C++, C#, Python, VBA</li>
+                        <li><strong>Web/DB:</strong> HTML/JS/CSS, ASP.NET Web API</li>
+                        <li><strong>DevOps/IT:</strong> MS Office, Cisco Tech, Docker</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Hardware Design & Analysis (EDA)</h4>
+                    <ul>
+                        <li>Altium Designer, KiCad</li>
+                        <li><strong>Mixed-Signal PCB Layout</strong></li>
+                        <li><strong>DFM/DFA for Production</strong></li>
+                        <li>LTSpice & Signal Integrity Simulation</li>
+                        <li>Logic 2.4, STM32Cube</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>AI, Models & Platforms</h4>
+                    <ul>
+                        <li><strong>Local AI Infrastructure:</strong> Ollama, Open WebUI, LM Studio, CUDA-accelerated inference</li>
+                        <li><strong>AI Automation:</strong> Agentic AI workflows, n8n pipelines with LLM integration, Docker containerized deployment</li>
+                        <li><strong>LLMs:</strong> Claude (Opus, Sonnet, Haiku), DeepSeek, Gemini Pro, Grok, ChatGPT, Perplexity</li>
+                        <li><strong>Edge AI:</strong> ST MEMS Studio, Random Forest, Neural Networks, on-device inference & classification</li>
+                        <li><strong>AI-Integrated Dev:</strong> AI CLI/IDE integrations, embedded AI in browser, Linux AI development environments</li>
+                        <li><strong>Skills:</strong> Prompt engineering, agentic AI design, signal processing with ML, SVG-based ML visualization</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Embedded Systems & MCUs</h4>
+                    <ul>
+                        <li>ESP32, STM32, MSP TI</li>
+                        <li>RP2040, Atmega / Attiny</li>
+                        <li>Teensy 4.1, Beaglebone Black</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Industrial Controls</h4>
+                    <ul>
+                        <li>Wonderware, Proficy Machine Edition</li>
+                        <li>FactoryTalk, Portal S7 Siemens</li>
+                        <li>Controllogix 5000, SLC500</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Specialized Domains</h4>
+                    <ul>
+                        <li><strong>RF Design & High-Power Electronics</strong></li>
+                        <li>Pulse Power & High-Voltage</li>
+                        <li>Li-Fi & Wireless Communication</li>
+                        <li>Industrial Automation (PLC/SCADA)</li>
+                        <li>Biomedical & Life-Saving Systems</li>
+                        <li>Safety-Critical Design</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="ai-projects-section" data-aos="fade-up">
+            <h2 class="section-title ai-projects">Personal Lab & R&D Projects</h2>
+            <div class="competencies-grid">
+                <div class="competency-group">
+                    <h4>EchoFlux — mmWave Gesture Controller</h4>
+                    <ul>
+                        <li>Developing a desk-mounted, contactless gesture controller using TI AWR6843AOPEVM mmWave radar and RP2350 MCU.</li>
+                        <li>Embedded C firmware with real-time signal processing and AI-driven gesture classification.</li>
+                        <li><strong>Tech:</strong> mmWave Radar, Embedded C, Sensor Fusion, RP2350</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Financial Hub Automation</h4>
+                    <ul>
+                        <li>Python-based AI system to automate the processing and intelligent visualization of financial documents.</li>
+                        <li>LLM-powered extraction and analysis pipeline for document understanding.</li>
+                        <li><strong>Tech:</strong> Python, LLM Integration, Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Human Presence Detector</h4>
+                    <ul>
+                        <li>Built an IoT detection system utilizing DFRobot C4001 mmWave sensor and Raspberry Pi Pico.</li>
+                        <li>Smart home automation with AI-enhanced occupancy detection.</li>
+                        <li><strong>Tech:</strong> IoT, mmWave, Raspberry Pi Pico</li>
+                    </ul>
+                </div>
+                <div class="competency-group">
+                    <h4>Local AI Infrastructure</h4>
+                    <ul>
+                        <li>Deployed containerized LLM stack (Ollama, Open WebUI, LM Studio) with CUDA acceleration.</li>
+                        <li>Built n8n automation workflows integrating multiple AI models for engineering productivity.</li>
+                        <li><strong>Tech:</strong> Docker, CUDA, n8n, LLM, Prompt Engineering</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="awards-section" data-aos="fade-up">
+            <h2 class="section-title awards">Honors & Awards</h2>
+            <div class="awards-grid">
+                <div class="award-category">
+                    <h4>Civilian Honors</h4>
+                    <ul>
+                        <li><strong>5 BRAVO Awards</strong> - <em>Honeywell FM&T</em></li>
+                        <li><strong>3 Patent Submission Recognitions</strong> - <em>Honeywell FM&T</em></li>
+                        <li><strong>1 Patent Submission Radar Tech</strong> - <em>Personally Owned</em></li>
+                    </ul>
+                </div>
+                <div class="award-category">
+                    <h4>Military Honors</h4>
+                    <ul>
+                        <li><strong>Certificate of Appreciation (Aug 2020)</strong>
+                            <em>Issued by Pentagon, DiLorenzo TRICARE Health Clinic. For enhancing patient experiences during assistance in August 2020.</em>
+                        </li>
+                        <li><strong>Army Achievement Medal (Jul 2017)</strong>
+                            <em>Issued for service as a Medical Maintenance NCO in Honduras. Citation Highlights: Acted as SME for the U.S. Embassy; Demonstrated versatility by drafting a CAD-based survey layout for a potential new hospital; Optimized the maintenance section by acquiring over 100 technical manuals.</em>
+                        </li>
+                        <li><strong>The Army Commendation Medal & Brigade Coin (Jun 2014)</strong>
+                            <em>Issued for actions during "Operation Appalachia Care." Citation Highlights: Redesigned duct ports, saving tens of thousands of dollars; Designed an optical phoropter counterbalance, increasing patient flow; Contributed to a record-breaking 8,000+ patients served.</em>
+                        </li>
+                        <li><strong>SGM Coin (Jun 2016)</strong>
+                            <em>Awarded for scoring expert marksmanship proficiency.</em>
+                        </li>
+                        <li><strong>The Army Achievement Medal (Aug 2012)</strong>
+                            <em>For meritorious achievement in being selected as the Distinguished Honor Graduate for the Biomedical Equipment Specialist Course.</em>
+                        </li>
+                        <li><strong>Certificate of Achievement (Jul 2012)</strong>
+                            <em>For scoring an exceptionally high score (296/300) on the Army Physical Fitness Test.</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="volunteer-section" data-aos="fade-up">
+            <h2 class="section-title volunteer">Volunteer & Community Involvement</h2>
+            
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">FIRST in Missouri</div>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Judge</span>
+                        <span class="position-date">Oct 2022 – Present</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Acted as a judge for FIRST Robotics Competitions, judging teams on long-term projects and robotics design. Assisted in deciding which teams advanced to regionals and assigned awards.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">Asociación Hogar Nazareth<span class="company-location">Honduras</span></div>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Volunteer</span>
+                        <span class="position-date">Sep 2016 – Aug 2017</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Performed work during military deployment free time. Purchased and installed washing equipment, showers, and other hardware fixes.</li>
+                        <li>Set up a computer and internet network to enhance schooling for the girls' home.</li>
+                        <li>Provided security recommendations (e.g., higher walls, electric fencing) after a security incident.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">Combined Federal Campaign (CFC)</div>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">CFC Manager</span>
+                        <span class="position-date">Nov 2016 – Aug 2017</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Promoted, tracked, managed, and sponsored events and donations for the campaign.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">Operation Appalachia Care</div>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Biomedical Technician</span>
+                        <span class="position-date">May 2014 – Jun 2014</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Provided medical aid to low-income areas of the Appalachians as part of a joint state and federal cooperative.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div class="company-name">Teen Challenge NY & Dream Center LA</div>
+                </div>
+                <div class="position-block">
+                    <div class="position-title">
+                        <span class="position-name">Child & Homeless Outreach</span>
+                        <span class="position-date">2009 – 2010</span>
+                    </div>
+                    <ul class="achievements">
+                        <li>Assisted at-risk children and homeless populations, including gang violence and prostitution outreach.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section" id="lab-video-section" data-aos="fade-up">
+            <h2 class="section-title">Home Embedded Lab</h2>
+            <div class="video-container">
+                <video id="lab-video" muted loop playsinline preload="metadata">
+                    <source src="assets/office_1.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+    </div>
+
+
+    <script>
+        // Canvas-based lens flare effect (no Three.js required)
+        window.addEventListener('DOMContentLoaded', () => {
+            const headerCanvas = document.getElementById('header-canvas');
+            if (!headerCanvas) return;
+
+            const headerContainer = headerCanvas.parentElement;
+            const ctx = headerCanvas.getContext('2d');
+
+            // Set canvas size
+            function resizeHeaderCanvas() {
+                headerCanvas.width = headerContainer.offsetWidth;
+                headerCanvas.height = headerContainer.offsetHeight;
+            }
+            resizeHeaderCanvas();
+
+            // Lens flare position
+            let flareX = headerCanvas.width * 0.85;
+            let flareY = headerCanvas.height * 0.35;
+
+            // Draw a single flare element
+            function drawFlare(x, y, size, intensity, color) {
+                ctx.save();
+                ctx.globalCompositeOperation = 'lighter';
+
+                // Main glow
+                const gradient = ctx.createRadialGradient(x, y, 0, x, y, size);
+                gradient.addColorStop(0, `rgba(${color}, ${intensity})`);
+                gradient.addColorStop(0.2, `rgba(${color}, ${intensity * 0.6})`);
+                gradient.addColorStop(0.5, `rgba(${color}, ${intensity * 0.2})`);
+                gradient.addColorStop(1, `rgba(${color}, 0)`);
+
+                ctx.fillStyle = gradient;
+                ctx.fillRect(x - size, y - size, size * 2, size * 2);
+
+                ctx.restore();
+            }
+
+            // Draw hexagonal flare element
+            function drawHexFlare(x, y, size, intensity) {
+                ctx.save();
+                ctx.globalCompositeOperation = 'lighter';
+
+                // Draw hexagon
+                ctx.beginPath();
+                for (let i = 0; i < 6; i++) {
+                    const angle = (Math.PI / 3) * i;
+                    const hx = x + size * Math.cos(angle);
+                    const hy = y + size * Math.sin(angle);
+                    if (i === 0) ctx.moveTo(hx, hy);
+                    else ctx.lineTo(hx, hy);
+                }
+                ctx.closePath();
+
+                const gradient = ctx.createRadialGradient(x, y, 0, x, y, size);
+                gradient.addColorStop(0, `rgba(150, 220, 255, ${intensity * 0.4})`);
+                gradient.addColorStop(0.5, `rgba(100, 200, 255, ${intensity * 0.2})`);
+                gradient.addColorStop(1, `rgba(100, 200, 255, 0)`);
+
+                ctx.fillStyle = gradient;
+                ctx.fill();
+
+                ctx.restore();
+            }
+
+            // Animate lens flare
+            function animateLensFlare() {
+                ctx.clearRect(0, 0, headerCanvas.width, headerCanvas.height);
+
+                // Calculate animated position
+                const time = Date.now() * 0.0003;
+                const centerX = headerCanvas.width * 0.85;
+                const centerY = headerCanvas.height * 0.35;
+                flareX = centerX + Math.cos(time) * 15;
+                flareY = centerY + Math.sin(time * 0.7) * 10;
+
+                // Main bright flare
+                drawFlare(flareX, flareY, 120, 0.8, '255, 255, 255');
+                drawFlare(flareX, flareY, 80, 0.6, '200, 230, 255');
+                drawFlare(flareX, flareY, 50, 0.4, '150, 220, 255');
+
+                // Secondary flare elements along a line from center
+                const dx = (headerCanvas.width / 2) - flareX;
+                const dy = (headerCanvas.height / 2) - flareY;
+
+                // Small colorful flares
+                drawFlare(flareX + dx * 0.3, flareY + dy * 0.3, 25, 0.4, '100, 200, 255');
+                drawHexFlare(flareX + dx * 0.5, flareY + dy * 0.5, 15, 0.5);
+                drawFlare(flareX + dx * 0.6, flareY + dy * 0.6, 30, 0.3, '120, 210, 255');
+                drawHexFlare(flareX + dx * 0.8, flareY + dy * 0.8, 20, 0.4);
+                drawFlare(flareX + dx * 1.0, flareY + dy * 1.0, 35, 0.25, '100, 200, 255');
+
+                requestAnimationFrame(animateLensFlare);
+            }
+            animateLensFlare();
+
+            // Handle resize
+            window.addEventListener('resize', resizeHeaderCanvas);
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Three.js removed: not used; lens flare is canvas-based -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Initialize 2D Section Icons
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.section-title').forEach(title => {
+                // Create icon container
+                const iconContainer = document.createElement('div');
+                iconContainer.className = 'section-icon-2d';
+
+                // Create red glowing star icon
+                const icon = document.createElement('div');
+                icon.className = 'icon-star';
+                iconContainer.appendChild(icon);
+
+                title.insertBefore(iconContainer, title.firstChild);
+            });
+        });
+
+        // Intersection Observer for Skill Bars
+        const skillsSection = document.getElementById('skills-section');
+        const skillLevels = document.querySelectorAll('.skill-level');
+
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    skillLevels.forEach(skill => {
+                        skill.style.width = skill.getAttribute('data-level');
+                    });
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillObserver.observe(skillsSection);
+
+        // Intersection Observer for Section Titles
+        const titles = document.querySelectorAll('.section-title');
+
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-title');
+                    titleObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.8 });
+
+        titles.forEach(title => {
+            titleObserver.observe(title);
+        });
+
+        // ========================================
+        // ACTIVE SECTION TRACKING WITH HOVER ENHANCEMENT
+        // ========================================
+
+        const sections = document.querySelectorAll('.section');
+        let currentActiveSection = null;
+
+        // Intersection Observer to track which section is in view
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+                    // Remove active from previous section
+                    if (currentActiveSection && currentActiveSection !== entry.target) {
+                        currentActiveSection.classList.remove('active-section');
+                        currentActiveSection.classList.remove('section-hovered'); // Clear enhancement
+                    }
+
+                    // Mark this section as active
+                    entry.target.classList.add('active-section');
+                    currentActiveSection = entry.target;
+                } else if (entry.target === currentActiveSection && !entry.isIntersecting) {
+                    // Remove active when section leaves viewport
+                    entry.target.classList.remove('active-section');
+                    entry.target.classList.remove('section-hovered'); // Clear enhancement
+                    currentActiveSection = null;
+                }
+            });
+        }, {
+            threshold: [0, 0.3, 0.5, 0.7],
+            rootMargin: '-10% 0px -10% 0px'
+        });
+
+        // Observe all sections
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+
+            // Add hover listener - enhancement persists until section changes
+            section.addEventListener('mouseenter', () => {
+                if (section.classList.contains('active-section')) {
+                    // Remove enhancement from any other section
+                    sections.forEach(s => {
+                        if (s !== section) {
+                            s.classList.remove('section-hovered');
+                        }
+                    });
+
+                    // Add enhancement to this section (persists after hover)
+                    section.classList.add('section-hovered');
+                }
+            });
+        });
+
+        // ========================================
+        // FUTURISTIC CIRCUIT BOARD EDGE EFFECTS
+        // ========================================
+
+        const canvas = document.getElementById('edge-particles');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const edgeWidth = 120; // Width of effect zone on each edge
+
+        // Circuit traces (vertical lines on edges)
+        const traces = [];
+        const numTracesPerSide = 4;
+
+        class CircuitTrace {
+            constructor(side) {
+                this.side = side; // 'left' or 'right'
+                this.x = side === 'left'
+                    ? Math.random() * edgeWidth
+                    : canvas.width - Math.random() * edgeWidth;
+                this.nodes = [];
+
+                // Create connection nodes along the trace
+                for (let i = 0; i < 6; i++) {
+                    this.nodes.push({
+                        y: (canvas.height / 6) * i + Math.random() * 50,
+                        pulsePhase: Math.random() * Math.PI * 2,
+                        size: 3
+                    });
+                }
+            }
+
+            draw() {
+                // Draw main trace line
+                ctx.strokeStyle = 'rgba(100, 200, 255, 0.15)';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(this.x, 0);
+                ctx.lineTo(this.x, canvas.height);
+                ctx.stroke();
+
+                // Draw connection nodes with pulse
+                this.nodes.forEach(node => {
+                    const pulse = Math.sin(Date.now() * 0.002 + node.pulsePhase) * 0.5 + 0.5;
+
+                    // Outer glow
+                    ctx.beginPath();
+                    ctx.arc(this.x, node.y, node.size + pulse * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(100, 200, 255, ${0.2 * pulse})`;
+                    ctx.fill();
+
+                    // Core
+                    ctx.beginPath();
+                    ctx.arc(this.x, node.y, node.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(150, 220, 255, ${0.6 + pulse * 0.4})`;
+                    ctx.fill();
+                });
+            }
+        }
+
+        // Create traces on both sides
+        for (let i = 0; i < numTracesPerSide; i++) {
+            traces.push(new CircuitTrace('left'));
+            traces.push(new CircuitTrace('right'));
+        }
+
+        // Hexagonal grid pattern
+        function drawHexGrid() {
+            const hexSize = 20;
+            const hexHeight = hexSize * Math.sqrt(3);
+
+            ctx.strokeStyle = 'rgba(100, 180, 220, 0.045)';
+            ctx.lineWidth = 0.5;
+
+            // Draw across entire background
+            const drawHex = (x, y) => {
+                ctx.beginPath();
+                for (let i = 0; i < 6; i++) {
+                    const angle = (Math.PI / 3) * i;
+                    const hx = x + hexSize * Math.cos(angle);
+                    const hy = y + hexSize * Math.sin(angle);
+                    if (i === 0) ctx.moveTo(hx, hy);
+                    else ctx.lineTo(hx, hy);
+                }
+                ctx.closePath();
+                ctx.stroke();
+            };
+
+            for (let row = 0; row < canvas.height / hexHeight + 2; row++) {
+                for (let col = 0; col < canvas.width / (hexSize * 1.5) + 2; col++) {
+                    const x = col * hexSize * 1.5;
+                    const y = row * hexHeight + (col % 2) * (hexHeight / 2);
+                    drawHex(x, y);
+                }
+            }
+        }
+
+        // Glowing hexagons
+        class GlowingHex {
+            constructor() {
+                const hexSize = 20;
+                const hexHeight = hexSize * Math.sqrt(3);
+
+                // Random position aligned to grid
+                const col = Math.floor(Math.random() * (canvas.width / (hexSize * 1.5)));
+                const row = Math.floor(Math.random() * (canvas.height / hexHeight));
+
+                this.x = col * hexSize * 1.5;
+                this.y = row * hexHeight + (col % 2) * (hexHeight / 2);
+                this.size = hexSize;
+                this.glow = 0;
+                this.targetGlow = 0;
+                this.nextChangeTime = Date.now() + Math.random() * 3000;
+            }
+
+            update() {
+                // Check if it's time to change state
+                if (Date.now() > this.nextChangeTime) {
+                    this.targetGlow = this.targetGlow > 0 ? 0 : 1;
+                    this.nextChangeTime = Date.now() + 2000 + Math.random() * 4000;
+                }
+
+                // Smooth transition (25% slower)
+                this.glow += (this.targetGlow - this.glow) * 0.015;
+            }
+
+            draw() {
+                if (this.glow < 0.01) return;
+
+                // Draw glowing fill (50% dimmer)
+                ctx.fillStyle = `rgba(100, 200, 255, ${this.glow * 0.075})`;
+                ctx.beginPath();
+                for (let i = 0; i < 6; i++) {
+                    const angle = (Math.PI / 3) * i;
+                    const hx = this.x + this.size * Math.cos(angle);
+                    const hy = this.y + this.size * Math.sin(angle);
+                    if (i === 0) ctx.moveTo(hx, hy);
+                    else ctx.lineTo(hx, hy);
+                }
+                ctx.closePath();
+                ctx.fill();
+
+                // Draw brighter outline (50% dimmer)
+                ctx.strokeStyle = `rgba(100, 200, 255, ${this.glow * 0.2})`;
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+            }
+        }
+
+        // Create glowing hexagons
+        const glowingHexes = [];
+        for (let i = 0; i < 25; i++) {
+            glowingHexes.push(new GlowingHex());
+        }
+
+        function animateCircuitBoard() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw hex grid (static)
+            drawHexGrid();
+
+            // Update and draw glowing hexagons
+            glowingHexes.forEach(hex => {
+                hex.update();
+                hex.draw();
+            });
+
+            // Draw all circuit traces
+            traces.forEach(trace => trace.draw());
+
+            requestAnimationFrame(animateCircuitBoard);
+        }
+
+        animateCircuitBoard();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // PDF Download Functionality
+        document.getElementById('download-pdf-btn').addEventListener('click', function() {
+            window.print();
+        });
+
+        // ========================================
+        // FLOATING NAV SIDEBAR
+        // ========================================
+        const navSidebar = document.querySelector('.nav-sidebar');
+        const navDots = document.querySelectorAll('.nav-dot');
+        const navSections = [];
+
+        navDots.forEach(dot => {
+            const targetId = dot.getAttribute('data-target');
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) navSections.push({ dot, el: targetEl });
+
+            dot.addEventListener('click', () => {
+                if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Show/hide nav sidebar based on scroll position
+        function updateNavSidebar() {
+            const scrollY = window.scrollY;
+            if (scrollY > 300) {
+                navSidebar.classList.add('visible');
+            } else {
+                navSidebar.classList.remove('visible');
+            }
+
+            // Highlight active dot
+            let activeIdx = 0;
+            navSections.forEach((item, idx) => {
+                const rect = item.el.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.4) activeIdx = idx;
+            });
+            navDots.forEach(d => d.classList.remove('active'));
+            if (navSections[activeIdx]) navSections[activeIdx].dot.classList.add('active');
+        }
+
+        window.addEventListener('scroll', updateNavSidebar, { passive: true });
+        updateNavSidebar();
+
+        // ========================================
+        // BACK TO TOP BUTTON
+        // ========================================
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 600) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ========================================
+        // LAB VIDEO AUTOPLAY ON SCROLL
+        // ========================================
+        const labVideo = document.getElementById('lab-video');
+        if (labVideo) {
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        labVideo.play();
+                    } else {
+                        labVideo.pause();
+                    }
+                });
+            }, { threshold: 0.3 });
+            videoObserver.observe(labVideo);
+        }
+
+    </script>
+</body>
+</html>

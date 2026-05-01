@@ -1,0 +1,22 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Archive files
+*.zip
+
+# Generated resume files from builder tool
+tools/resume-builder/*-Resume.html
+tools/resume-builder/resume-config.json

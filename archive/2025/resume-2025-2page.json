@@ -1,0 +1,107 @@
+{
+  "basics": {
+    "label": "Senior Electrical Engineer",
+    "location": {
+      "city": "Pleasant Hill",
+      "region": "MO"
+    },
+    "summary": "Senior Electrical Engineer and veteran with a Master's in Business (MBA) and extensive experience in industrial controls, defense, and program management. Specialized in embedded systems, R&D, and prototyping. Proven track record of managing budgets and leading teammates in high-stakes environments."
+  },
+  "work": [
+    {
+      "company": "Honeywell FMT (KCNSC)",
+      "position": "Senior Electrical Engineer",
+      "startDate": "2023-01",
+      "endDate": "Present",
+      "highlights": [
+        "Lead R&D initiatives focusing on embedded systems and firmware programming.",
+        "Manage cross-functional teammates and oversee project budget allocation to ensure milestones are met.",
+        "Develop prototypes involving PCB design and IoT integration.",
+        "Drive technical program management strategies bridging engineering and business requirements."
+      ]
+    },
+    {
+      "company": "US Army",
+      "position": "Non-Commissioned Officer",
+      "startDate": "2015-01",
+      "endDate": "2019-01",
+      "highlights": [
+        "Led squad-level operations and managed personnel logistics.",
+        "Responsible for equipment maintenance and operational readiness.",
+        "demonstrated leadership under pressure and adherence to strict protocols."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University Name",
+      "area": "Business Administration",
+      "studyType": "Master's Degree (MBA)",
+      "endDate": "2024"
+    },
+    {
+      "institution": "University Name",
+      "area": "Engineering",
+      "studyType": "Bachelor's Degree",
+      "endDate": "2015"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Embedded Systems",
+      "keywords": [
+        "C/C++",
+        "Python",
+        "Firmware",
+        "RP2350",
+        "Raspberry Pi Pico"
+      ]
+    },
+    {
+      "name": "Hardware Design",
+      "keywords": [
+        "PCB Design",
+        "mmWave Radar (TI AWR/IWR)",
+        "Industrial Controls",
+        "3D Printing"
+      ]
+    },
+    {
+      "name": "Software & Tools",
+      "keywords": [
+        "Local AI (Ollama, Open WebUI)",
+        "n8n Automation",
+        "Linux"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "EchoFlux",
+      "description": "Developing a desk-mounted, contactless gesture controller using AWR6843AOPEVM and RP2350 MCU.",
+      "keywords": [
+        "mmWave",
+        "Gesture Control",
+        "Embedded C"
+      ]
+    },
+    {
+      "name": "Financial Hub Automation",
+      "description": "Python-based system to automate the processing and visualization of financial documents.",
+      "keywords": [
+        "Python",
+        "Automation",
+        "Data Visualization"
+      ]
+    },
+    {
+      "name": "Human Presence Detector",
+      "description": "Built a detection system utilizing DFRobot C4001 mmWave sensor and Raspberry Pi Pico.",
+      "keywords": [
+        "IoT",
+        "Sensors",
+        "Home Automation"
+      ]
+    }
+  ]
+}
