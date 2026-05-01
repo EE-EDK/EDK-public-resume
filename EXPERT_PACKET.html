@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Witness Packet — Ethan Kunz, MBA, B.S. EE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #1e2c4c;
+            --secondary: #c41e3a;
+            --text: #2c3e50;
+            --light-bg: #f8f9fa;
+            --border: #dee2e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #525659; /* PDF Viewer-like background */
+            padding: 40px 0;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto 40px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        /* Page break control */
+        @media print {
+            body { background: none; padding: 0; }
+            .page { 
+                margin: 0; 
+                box-shadow: none; 
+                page-break-after: always; 
+                page-break-inside: avoid;
+            }
+            .page:last-child { page-break-after: auto; }
+        }
+
+        .header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-info h1 {
+            font-size: 28px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-info p {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 20px;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p { margin-bottom: 12px; }
+
+        .summary {
+            font-style: italic;
+            background: var(--light-bg);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li { margin-bottom: 6px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Table Styling for Rate Sheet */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) { background-color: var(--light-bg); }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 12px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: PROFESSIONAL BIO -->
+    <div class="page">
+        <div class="header">
+            <div class="header-info">
+                <h1>Ethan Kunz, MBA, B.S. EE</h1>
+                <p>Senior Electrical Engineer | Technical Consultant | Expert Witness</p>
+            </div>
+            <div class="contact-info">
+                <p>Expert Profile: IMS Legal</p>
+                <p>Portfolio: ee-edk.github.io/EDK-public-resume/</p>
+            </div>
+        </div>
+
+        <h2>Executive Summary</h2>
+        <div class="summary">
+            Senior Electrical and Embedded Systems Engineer with over a decade of experience specializing in mission-critical hardware design, firmware development, and technical program leadership. Combining a B.S. in Electrical Engineering (Cum Laude) with an MBA, Mr. Kunz offers a rare synthesis of deep technical mastery and sophisticated business/risk analysis. His background includes high-stakes engineering in Pulsed Power, High-Voltage systems, and Medical Technology, as well as service as a military Range Safety Officer.
+        </div>
+
+        <h2>Areas of Expertise</h2>
+        <div class="grid">
+            <div>
+                <p><strong>Embedded Systems & Firmware</strong></p>
+                <ul>
+                    <li>Architecture & System Design</li>
+                    <li>C/C++ Development</li>
+                    <li>ESP32, STM32, RP2040, MSP430</li>
+                    <li>Real-Time Operating Systems (RTOS)</li>
+                </ul>
+                <p><strong>Hardware & EDA</strong></p>
+                <ul>
+                    <li>Mixed-Signal PCB Design</li>
+                    <li>Altium Designer & KiCad</li>
+                    <li>Signal Integrity & Simulation</li>
+                    <li>DFM/DFA for Production</li>
+                </ul>
+            </div>
+            <div>
+                <p><strong>Specialized Engineering</strong></p>
+                <ul>
+                    <li>Pulsed Power & High-Voltage</li>
+                    <li>mmWave Radar & Sensor Fusion</li>
+                    <li>Industrial Automation (PLC/SCADA)</li>
+                    <li>Bio-medical Equipment Forensics</li>
+                </ul>
+                <p><strong>Leadership & Compliance</strong></p>
+                <ul>
+                    <li>Program Management ($M+ Budgets)</li>
+                    <li>Quality Metrics & SPC</li>
+                    <li>OSHA & Range Safety Protocols</li>
+                    <li>Lean Six Sigma (Green Belt)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Professional Experience Highlights</h2>
+        <p><strong>Technical Manager & Lead Engineer</strong><br>Oversight of complex engineering portfolios and multi-disciplinary teams. Directed full-lifecycle development of embedded hardware and firmware for mission-critical applications.</p>
+        
+        <p><strong>Pulsed Power Specialist</strong><br>Architected and implemented high-energy discharge systems, ensuring rigorous safety compliance and technical reliability under extreme electrical stress.</p>
+
+        <p><strong>Bio-medical Equipment Technician (US Army)</strong><br>Performed forensic-level maintenance, calibration, and failure analysis of life-critical medical devices in field and clinical environments.</p>
+
+        <div class="footer">
+            Expert Witness Bio — Ethan Kunz, MBA, B.S. EE
+        </div>
+    </div>
+
+    <!-- PAGE 2: RATE SHEET -->
+    <div class="page">
+        <div class="header">
+            <div class="header-info">
+                <h1>Expert Witness Rate Sheet</h1>
+                <p>Ethan Kunz, MBA, B.S. EE — Consulting Fee Schedule</p>
+            </div>
+            <div class="contact-info">
+                <p>Effective: May 2026</p>
+                <p>Terms: Retainer Required</p>
+            </div>
+        </div>
+
+        <h2>Fee Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service Category</th>
+                    <th>Rate</th>
+                    <th>Basis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Initial Case Consultation</td>
+                    <td>Complimentary</td>
+                    <td>Up to 30 min</td>
+                </tr>
+                <tr>
+                    <td>Technical Review & Research</td>
+                    <td>$300.00</td>
+                    <td>Per Hour</td>
+                </tr>
+                <tr>
+                    <td>Written Reports / Affidavits</td>
+                    <td>$300.00</td>
+                    <td>Per Hour</td>
+                </tr>
+                <tr>
+                    <td>Deposition Testimony</td>
+                    <td>$450.00</td>
+                    <td>Per Hour (4hr min)</td>
+                </tr>
+                <tr>
+                    <td>Trial Testimony / Court Appearance</td>
+                    <td>$3,500.00</td>
+                    <td>Per Day</td>
+                </tr>
+                <tr>
+                    <td>Travel Time (Non-Local)</td>
+                    <td>$150.00</td>
+                    <td>Per Hour</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Terms and Conditions</h2>
+        <ul>
+            <li><strong>Retainer:</strong> A standard retainer of $3,000.00 is required prior to the commencement of technical review or document analysis. Fees will be billed against the retainer.</li>
+            <li><strong>Billing Increment:</strong> Hourly services are billed in 15-minute increments.</li>
+            <li><strong>Expenses:</strong> Reimbursable expenses include airfare (Economy/Premium), lodging, ground transportation, and a standard per-diem for meals.</li>
+            <li><strong>Cancellation:</strong> Cancellations for depositions or trial testimony made less than 72 hours in advance are subject to the minimum daily/hourly fee.</li>
+        </ul>
+
+        <h2>Expert Authority</h2>
+        <p>Expertise is grounded in over 10 years of industrial, defense, and medical engineering. Academic credentials include an MBA and B.S. in Electrical Engineering (Cum Laude). Professional certifications include Lean Six Sigma (KCNSC) and U.S. Army Range Safety Officer.</p>
+
+        <div class="footer">
+            Rate Sheet — Ethan Kunz, MBA, B.S. EE
+        </div>
+    </div>
+
+</body>
+</html>
