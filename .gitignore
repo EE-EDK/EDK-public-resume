@@ -18,6 +18,9 @@ desktop.ini
 archive/
 *.zip
 
+# Upload staging folders
+ims-legal-upload/
+
 # Generated resume files from builder tool
 tools/resume-builder/*-Resume.html
 tools/resume-builder/resume-config.json
