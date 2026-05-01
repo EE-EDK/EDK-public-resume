@@ -13,6 +13,7 @@
             --text: #2c3e50;
             --light-bg: #f8f9fa;
             --border: #dee2e6;
+            --row-alt: #f4f6f8;
         }
 
         * {
@@ -23,290 +24,613 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.55;
             color: var(--text);
-            background-color: #525659; /* PDF Viewer-like background */
+            background-color: #525659;
             padding: 40px 0;
         }
 
         .page {
             width: 210mm;
             min-height: 297mm;
-            padding: 20mm;
+            padding: 18mm 20mm 16mm 20mm;
             margin: 0 auto 40px auto;
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Page break control */
+        .page-content {
+            flex: 1;
+        }
+
+        /* ── Print Styles ── */
         @media print {
-            body { background: none; padding: 0; }
-            .page { 
-                margin: 0; 
-                box-shadow: none; 
-                page-break-after: always; 
+            body {
+                background: none;
+                padding: 0;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
                 page-break-inside: avoid;
             }
-            .page:last-child { page-break-after: auto; }
+            .page:last-child {
+                page-break-after: auto;
+            }
         }
 
+        /* ── Header ── */
         .header {
             border-bottom: 2px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding-bottom: 14px;
+            margin-bottom: 22px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
         }
 
-        .header-info h1 {
-            font-size: 28px;
+        .header-left h1 {
+            font-size: 26px;
+            font-weight: 700;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-right: 15px;
+            letter-spacing: 1.5px;
+            margin: 0;
         }
 
-        .header-info .subtitle {
+        .header-left .credentials {
+            font-size: 15px;
             font-weight: 600;
             color: var(--secondary);
-            font-size: 18px;
-            display: inline-block;
-            vertical-align: baseline;
+            margin-top: 1px;
         }
 
-        .header-info .titles {
+        .header-left .role {
+            font-size: 12.5px;
             font-weight: 600;
-            color: var(--secondary);
-            font-size: 14px;
-            margin-top: 5px;
+            color: var(--primary);
+            margin-top: 4px;
+            letter-spacing: 0.3px;
         }
 
-        .header-info .portfolio {
-            font-size: 13px;
+        .header-left .portfolio {
+            font-size: 11.5px;
+            color: var(--primary);
+            margin-top: 3px;
+        }
+
+        .header-left .portfolio a {
+            color: var(--primary);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 12px;
             color: var(--primary);
             font-weight: 600;
-            margin-top: 5px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
-        .header-info .portfolio a {
-            color: #0000ee;
-            font-style: italic;
-            text-decoration: underline;
-        }
-
+        /* ── Section Headers ── */
         h2 {
             color: var(--primary);
-            font-size: 20px;
-            margin: 25px 0 15px 0;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 20px 0 10px 0;
             border-left: 4px solid var(--secondary);
-            padding-left: 15px;
+            padding-left: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
-        p { margin-bottom: 12px; }
+        h2:first-child,
+        .page-content > h2:first-child {
+            margin-top: 0;
+        }
 
-        .summary {
-            font-style: italic;
+        /* ── Body Text ── */
+        p {
+            font-size: 11.5px;
+            margin-bottom: 8px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .summary-block {
             background: var(--light-bg);
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
+            border-left: 3px solid var(--primary);
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            font-style: italic;
+            font-size: 11.5px;
+            line-height: 1.6;
         }
 
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        li { margin-bottom: 6px; }
-
-        .grid {
+        /* ── Two-Column Grid ── */
+        .expertise-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 0 28px;
+            margin-bottom: 14px;
         }
 
-        /* Table Styling for Rate Sheet */
+        .expertise-grid ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .expertise-grid li {
+            font-size: 11.5px;
+            padding: 4px 0 4px 16px;
+            position: relative;
+            line-height: 1.45;
+        }
+
+        .expertise-grid li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        /* ── Basis Paragraph ── */
+        .basis-block {
+            font-size: 11.5px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* ── Tables ── */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
+            margin: 10px 0 14px 0;
+            font-size: 11px;
         }
 
         th {
             background-color: var(--primary);
             color: white;
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            padding: 9px 12px;
+            text-align: left;
         }
 
-        tr:nth-child(even) { background-color: var(--light-bg); }
+        td {
+            padding: 7px 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 11px;
+            vertical-align: top;
+        }
 
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            font-size: 12px;
-            color: #7f8c8d;
+        tr:nth-child(even) {
+            background-color: var(--row-alt);
+        }
+
+        /* Rate column right-align */
+        .rate-table td:nth-child(2),
+        .rate-table th:nth-child(2) {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .rate-table td:nth-child(3),
+        .rate-table th:nth-child(3) {
             text-align: center;
         }
 
-        .contact-info {
+        /* ── Experience Entries ── */
+        .experience-entry {
+            margin-bottom: 12px;
+        }
+
+        .experience-entry .org-line {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1px;
+        }
+
+        .experience-entry .title-line {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 3px;
+            font-style: italic;
+        }
+
+        .experience-entry ul {
+            margin: 0 0 0 16px;
+            padding: 0;
+        }
+
+        .experience-entry li {
+            font-size: 11px;
+            margin-bottom: 3px;
+            line-height: 1.45;
+        }
+
+        /* ── Education / Patent Rows ── */
+        .credential-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 11px;
+            padding: 4px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .credential-row:last-child {
+            border-bottom: none;
+        }
+
+        .credential-row .degree {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .credential-row .institution {
+            font-weight: 400;
+            color: var(--text);
             text-align: right;
-            font-size: 13px;
+        }
+
+        /* ── Terms List ── */
+        .terms-list {
+            margin: 0 0 14px 16px;
+            padding: 0;
+        }
+
+        .terms-list li {
+            font-size: 11px;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        /* ── Forensic Block ── */
+        .forensic-block {
+            background: var(--light-bg);
+            border-left: 3px solid var(--primary);
+            padding: 12px 14px;
+            margin-top: 8px;
+            margin-bottom: 14px;
+            font-size: 11px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* ── Contact Footer ── */
+        .contact-block {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: var(--primary);
+            color: white;
+            font-size: 11px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-block a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ── Page Footer ── */
+        .page-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 8px;
+            margin-top: auto;
+            font-size: 10px;
+            color: #7f8c8d;
+            display: flex;
+            justify-content: space-between;
+            letter-spacing: 0.3px;
+        }
+
+        /* ── Standards table special ── */
+        .standards-table td:first-child {
+            font-weight: 600;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        /* ── Patent list ── */
+        .patent-list {
+            margin: 0 0 0 16px;
+            padding: 0;
+        }
+
+        .patent-list li {
+            font-size: 11px;
+            margin-bottom: 4px;
+            line-height: 1.45;
         }
     </style>
 </head>
 <body>
 
-    <!-- PAGE 1: PROFESSIONAL BIO -->
+    <!-- ════════════════════════════════════════════════════════════ -->
+    <!-- PAGE 1: PROFESSIONAL BIO & EXPERT AUTHORITY                -->
+    <!-- ════════════════════════════════════════════════════════════ -->
     <div class="page">
         <div class="header">
-            <div class="header-info">
+            <div class="header-left">
                 <h1>Ethan Kunz</h1>
-                <p class="subtitle">MBA, B.S. EE</p>
-                <p class="titles">Senior Electrical Engineer | Technical Consultant | Expert Witness</p>
-                <p class="portfolio">Portfolio: <a href="https://ee-edk.github.io/EDK-public-resume/">ee-edk.github.io/EDK-public-resume/</a></p>
+                <div class="credentials">MBA, B.S. EE</div>
+                <div class="role">Senior Electrical Engineer &nbsp;|&nbsp; Technical Consultant &nbsp;|&nbsp; Expert Witness</div>
+                <div class="portfolio">Portfolio: <a href="https://ee-edk.github.io/EDK-public-resume/">ee-edk.github.io/EDK-public-resume</a></div>
             </div>
-            <div class="contact-info">
-                <p>Expert Profile: IMS Legal</p>
-            </div>
-        </div>
-
-        <h2>Executive Summary</h2>
-        <div class="summary">
-            Senior Electrical and Embedded Systems Engineer with over a decade of experience specializing in mission-critical hardware design, firmware development, and technical program leadership. Combining a B.S. in Electrical Engineering (Cum Laude) with an MBA, Mr. Kunz offers a rare synthesis of deep technical mastery and sophisticated business/risk analysis. His background includes high-stakes engineering in Pulsed Power, High-Voltage systems, and Medical Technology, as well as distinguished service as a decorated U.S. Army Veteran.
-        </div>
-
-        <h2>Areas of Expertise</h2>
-        <div class="grid">
-            <div>
-                <p><strong>Embedded Systems & Firmware</strong></p>
-                <ul>
-                    <li>Architecture & System Design</li>
-                    <li>C/C++ Development</li>
-                    <li>ESP32, STM32, RP2040, MSP430</li>
-                    <li>Real-Time Operating Systems (RTOS)</li>
-                </ul>
-                <p><strong>Hardware & EDA</strong></p>
-                <ul>
-                    <li>Mixed-Signal PCB Design</li>
-                    <li>Altium Designer & KiCad</li>
-                    <li>Signal Integrity & Simulation</li>
-                    <li>DFM/DFA for Production</li>
-                </ul>
-            </div>
-            <div>
-                <p><strong>Specialized Engineering</strong></p>
-                <ul>
-                    <li>Pulsed Power & High-Voltage</li>
-                    <li>mmWave Radar & Sensor Fusion</li>
-                    <li>Industrial Automation (PLC/SCADA)</li>
-                    <li>Bio-medical Equipment Forensics</li>
-                </ul>
-                <p><strong>Military & Leadership</strong></p>
-                <ul>
-                    <li>Decorated U.S. Army Veteran</li>
-                    <li>Program Management ($M+ Budgets)</li>
-                    <li>Range Safety & Operational Risk</li>
-                    <li>Lean Six Sigma (Green Belt)</li>
-                </ul>
+            <div class="header-right">
+                Expert Profile: IMS Legal
             </div>
         </div>
 
-        <h2>Professional Experience Highlights</h2>
-        <p><strong>Technical Manager & Lead Engineer</strong><br>Oversight of complex engineering portfolios and multi-disciplinary teams. Directed full-lifecycle development of embedded hardware and firmware for mission-critical applications.</p>
-        
-        <p><strong>Pulsed Power Specialist</strong><br>Architected and implemented high-energy discharge systems, ensuring rigorous safety compliance and technical reliability under extreme electrical stress.</p>
+        <div class="page-content">
 
-        <p><strong>Decorated U.S. Army Veteran</strong><br>Served with distinction in technical and leadership roles. As a Bio-medical Equipment Technician and Range Safety Officer, performed forensic-level maintenance and failure analysis of life-critical hardware while managing complex operational risks in high-consequence environments.</p>
+            <h2>Executive Summary</h2>
+            <div class="summary-block">
+                Senior Electrical and Embedded Systems Engineer with over a decade of combined industrial, defense, and national-security engineering experience. Mr. Kunz provides expert analysis and testimony in matters involving electronic product failures, embedded systems defects, PCB design and manufacturing disputes, industrial electrical accidents, high-voltage system incidents, biomedical equipment malfunctions, and patent infringement claims in the electrical engineering domain. His unique combination of a B.S. in Electrical Engineering (Cum Laude) and an MBA equips him with both the technical depth to perform forensic-level hardware analysis and the business acumen to quantify economic damages and assess standard-of-care violations. As a decorated U.S. Army Veteran who served as a Biomedical Equipment Technician performing failure analysis on life-critical medical hardware, Mr. Kunz brings a disciplined, methodical approach to every engagement.
+            </div>
 
-        <div class="footer">
-            Expert Witness Bio — Ethan Kunz, MBA, B.S. EE
+            <h2>Areas of Expert Opinion</h2>
+            <div class="expertise-grid">
+                <ul>
+                    <li>Electronic Product Liability &amp; Failure Analysis</li>
+                    <li>Embedded Firmware Defects &amp; Safety-Critical Software</li>
+                    <li>PCB Design, Manufacturing &amp; Assembly Defects</li>
+                    <li>High-Voltage &amp; Pulsed Power System Incidents</li>
+                    <li>Industrial Electrical Accidents &amp; Code Violations</li>
+                </ul>
+                <ul>
+                    <li>Biomedical &amp; Life-Critical Equipment Failures</li>
+                    <li>Patent Infringement (Electrical / Firmware / Hardware)</li>
+                    <li>Industrial Automation &amp; PLC/SCADA Failures</li>
+                    <li>Signal Integrity, EMC &amp; RF Design Disputes</li>
+                    <li>Standard-of-Care &amp; Design Process Compliance</li>
+                </ul>
+            </div>
+
+            <h2>Basis for Expert Opinions</h2>
+            <p class="basis-block">
+                Mr. Kunz's opinions are grounded in over ten years of direct, hands-on engineering across multiple high-consequence industries: national security systems at Honeywell FM&amp;T / Kansas City National Security Campus, heavy industrial electrical systems at Nucor Corporation, and life-saving device design at Global Rescue Systems. He holds four patent-level innovations&mdash;three disclosures accepted by Honeywell in Li-Fi optical communications and software firesets, and one personally-owned patent in millimeter-wave radar technology. His military service as a Biomedical Equipment Technician included forensic-level maintenance, calibration, and failure analysis of FDA-regulated medical devices per 21 CFR Part 820 and MIL-STD requirements. He maintains a professional forensic analysis laboratory equipped with multi-channel logic analyzers, ultrasonic soldering, hot-flow rework stations, and 4K digital microscopy for physical evidence examination of electronic assemblies.
+            </p>
+            <p class="basis-block">
+                Mr. Kunz's industrial experience at Nucor Corporation encompassed directing electrical modernization projects across three departments at a 100,000-ton-per-year plate steel facility, managing budgets exceeding one million dollars and coordinating up to 200 personnel. This background provides direct, first-hand knowledge of industrial electrical safety practices, NEC/NFPA 70E compliance, heavy equipment integration, and the engineering standard of care expected in high-hazard manufacturing environments. His work at Global Rescue Systems designing ruggedized electronics for first responders and the U.S. Coast Guard further grounds his understanding of reliability requirements for life-safety applications.
+            </p>
+            <p class="basis-block">
+                Academically, Mr. Kunz completed an MBA with a 4.0 GPA, providing the financial and managerial framework to assess economic damages, product development costs, standard business practices, and organizational failures that contribute to engineering disputes.
+            </p>
+
+        </div>
+
+        <div class="page-footer">
+            <span>Expert Witness Packet &mdash; Ethan Kunz, MBA, B.S. EE</span>
+            <span>Page 1 of 3 &mdash; Professional Bio &amp; Expert Authority</span>
         </div>
     </div>
 
-    <!-- PAGE 2: RATE SHEET -->
+    <!-- ════════════════════════════════════════════════════════════ -->
+    <!-- PAGE 2: DETAILED QUALIFICATIONS                            -->
+    <!-- ════════════════════════════════════════════════════════════ -->
     <div class="page">
         <div class="header">
-            <div class="header-info">
+            <div class="header-left">
                 <h1>Ethan Kunz</h1>
-                <p class="subtitle">MBA, B.S. EE</p>
-                <p class="titles">Senior Electrical Engineer | Technical Consultant | Expert Witness</p>
-                <p class="portfolio">Portfolio: <a href="https://ee-edk.github.io/EDK-public-resume/">ee-edk.github.io/EDK-public-resume/</a></p>
+                <div class="credentials">MBA, B.S. EE</div>
+                <div class="role">Senior Electrical Engineer &nbsp;|&nbsp; Technical Consultant &nbsp;|&nbsp; Expert Witness</div>
+                <div class="portfolio">Portfolio: <a href="https://ee-edk.github.io/EDK-public-resume/">ee-edk.github.io/EDK-public-resume</a></div>
             </div>
-            <div class="contact-info">
-                <p>Expert Profile: IMS Legal</p>
+            <div class="header-right">
+                Expert Profile: IMS Legal
             </div>
         </div>
 
-        <h2>Fee Schedule</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Service Category</th>
-                    <th>Rate</th>
-                    <th>Basis</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Initial Case Consultation</td>
-                    <td>Complimentary</td>
-                    <td>Up to 30 min</td>
-                </tr>
-                <tr>
-                    <td>Technical Review & Research</td>
-                    <td>$300.00</td>
-                    <td>Per Hour</td>
-                </tr>
-                <tr>
-                    <td>Written Reports / Affidavits</td>
-                    <td>$300.00</td>
-                    <td>Per Hour</td>
-                </tr>
-                <tr>
-                    <td>Deposition Testimony</td>
-                    <td>$450.00</td>
-                    <td>Per Hour (4hr min)</td>
-                </tr>
-                <tr>
-                    <td>Trial Testimony / Court Appearance</td>
-                    <td>$3,500.00</td>
-                    <td>Per Day</td>
-                </tr>
-                <tr>
-                    <td>Travel Time (Non-Local)</td>
-                    <td>$150.00</td>
-                    <td>Per Hour</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="page-content">
 
-        <h2>Terms and Conditions</h2>
-        <ul>
-            <li><strong>Retainer:</strong> A standard retainer of $3,000.00 is required prior to the commencement of technical review or document analysis. Fees will be billed against the retainer.</li>
-            <li><strong>Billing Increment:</strong> Hourly services are billed in 15-minute increments.</li>
-            <li><strong>Expenses:</strong> Reimbursable expenses include airfare (Economy/Premium), lodging, ground transportation, and a standard per-diem for meals.</li>
-            <li><strong>Cancellation:</strong> Cancellations for depositions or trial testimony made less than 72 hours in advance are subject to the minimum daily/hourly fee.</li>
-        </ul>
+            <h2>Professional Experience</h2>
 
-        <h2>Expert Authority</h2>
-        <p>Expertise is grounded in over 10 years of industrial, defense, and medical engineering. Academic credentials include an MBA and B.S. in Electrical Engineering (Cum Laude). Professional certifications include Lean Six Sigma (KCNSC) and U.S. Army Range Safety Officer.</p>
+            <div class="experience-entry">
+                <div class="org-line">Honeywell FM&amp;T / Kansas City National Security Campus &nbsp;&mdash;&nbsp; Kansas City, MO</div>
+                <div class="title-line">Senior Electrical Engineer (2024&ndash;Present) / EE III (2022&ndash;2024) / EE II (2020&ndash;2022)</div>
+                <ul>
+                    <li>Lead technical and project engineer for multi-million-dollar pulsed power programs serving national security missions</li>
+                    <li>Architected end-to-end pulsed power systems from concept through EDA simulation (LTSpice, Altium Designer) to mission-ready delivery</li>
+                    <li>Spearheaded Li-Fi R&amp;D initiative as electrical lead, producing 3 patent disclosures and 3 functional prototypes</li>
+                    <li>Executed QRC manufacturing: 30 full-scale systems, 200+ hours of personal testing, 50% deliverable recovery under deadline</li>
+                    <li>Rescued high-priority Special Projects program by debugging critical firmware defects across STM32, Renesas RA, and RP2350 platforms</li>
+                    <li>Modernized 3 legacy national security components through 9 V-Model design milestones</li>
+                    <li>Lean Six Sigma practitioner (DFSS Green Belt): statistical process control, design-of-experiments, quality metrics</li>
+                </ul>
+            </div>
 
-        <div class="footer">
-            Rate Sheet — Ethan Kunz, MBA, B.S. EE
+            <div class="experience-entry">
+                <div class="org-line">Nucor Corporation &nbsp;&mdash;&nbsp; Longview, TX &amp; Blytheville, AR</div>
+                <div class="title-line">Electrical Projects Lead / Industrial Electrical Technician (May 2018&ndash;Apr 2020)</div>
+                <ul>
+                    <li>Directed electrical modernization across 3 departments (200 personnel) at 100,000-ton/year plate steel facility</li>
+                    <li>Key projects: steel quench process integration, power feed redesign for 9 heavy industrial furnaces, ABB drive system implementation</li>
+                    <li>Sole electrical technician for rolling mill and finishing departments on 12-hour rotating shifts</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="org-line">Global Rescue Systems &nbsp;&mdash;&nbsp; Columbia, MO</div>
+                <div class="title-line">Electrical Design Engineer (Aug 2017&ndash;Mar 2018)</div>
+                <ul>
+                    <li>Designed ruggedized, life-saving electronic devices for first responders and the U.S. Coast Guard</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="org-line">United States Army Reserves &nbsp;&mdash;&nbsp; 10 Years of Service (May 2011&ndash;Jun 2021)</div>
+                <div class="title-line">Biomedical Equipment Technician (MOS 68A), E-5 / Platoon Sergeant</div>
+                <ul>
+                    <li>Distinguished Honor Graduate, Biomedical Equipment Technician Course (METC, Fort Sam Houston)</li>
+                    <li>1st Platoon Sergeant: led 22 soldiers; NCOIC Biomedical Section: managed 8 technicians</li>
+                    <li>9-month Honduras deployment (JTF-B): subject matter expert for U.S. Embassy; drafted CAD hospital expansion layouts</li>
+                    <li>Forensic-level maintenance and calibration of FDA-regulated, life-critical medical equipment per 21 CFR Part 820</li>
+                    <li>Range Safety Officer: operational risk assessment and management in high-consequence environments</li>
+                    <li>Awards: Army Commendation Medal, 2x Army Achievement Medals, Pentagon Certificate of Appreciation</li>
+                </ul>
+            </div>
+
+            <h2>Standards &amp; Codes Expertise</h2>
+            <table class="standards-table">
+                <thead>
+                    <tr>
+                        <th>Standard</th>
+                        <th>Domain</th>
+                        <th>Relevance to Expert Testimony</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>IPC-2221A</td><td>PCB Design</td><td>Generic design rules for printed circuit boards</td></tr>
+                    <tr><td>IPC-A-610</td><td>Assembly</td><td>Acceptability of electronic assemblies (Class 2/3)</td></tr>
+                    <tr><td>IPC-J-STD-001</td><td>Soldering</td><td>Requirements for soldered electrical and electronic connections</td></tr>
+                    <tr><td>IEC 61010-1</td><td>Safety</td><td>Safety of electrical equipment for measurement, control, and laboratory use</td></tr>
+                    <tr><td>MISRA C/C++</td><td>Firmware</td><td>Safety-critical embedded software guidelines</td></tr>
+                    <tr><td>NEC / NFPA 70E</td><td>Electrical Safety</td><td>National Electrical Code and workplace electrical safety</td></tr>
+                    <tr><td>MIL-STD Series</td><td>Defense</td><td>Military standards for design, testing, and reliability</td></tr>
+                    <tr><td>21 CFR Part 820</td><td>Medical Devices</td><td>FDA quality system regulation for medical devices</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Education</h2>
+            <div class="credential-row">
+                <span class="degree">MBA (GPA: 4.0 / 4.0)</span>
+                <span class="institution">LeTourneau University</span>
+            </div>
+            <div class="credential-row">
+                <span class="degree">B.S. Electrical Engineering (Cum Laude)</span>
+                <span class="institution">Missouri University of Science &amp; Technology</span>
+            </div>
+            <div class="credential-row">
+                <span class="degree">Biomedical Equipment Technician Certification (&gt;95%)</span>
+                <span class="institution">METC / CCAF, Fort Sam Houston</span>
+            </div>
+
+            <h2>Patents &amp; Intellectual Property</h2>
+            <ul class="patent-list">
+                <li><strong>3 Patent Disclosures (Honeywell FM&amp;T):</strong> Li-Fi optical communications technology and software firesets for national security applications</li>
+                <li><strong>1 Patent (Personally Owned):</strong> Millimeter-wave (mmWave) radar technology</li>
+                <li><strong>5 BRAVO Awards</strong> for technical excellence (Honeywell FM&amp;T)</li>
+            </ul>
+
+        </div>
+
+        <div class="page-footer">
+            <span>Expert Witness Packet &mdash; Ethan Kunz, MBA, B.S. EE</span>
+            <span>Page 2 of 3 &mdash; Detailed Qualifications</span>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════════ -->
+    <!-- PAGE 3: RATE SHEET                                         -->
+    <!-- ════════════════════════════════════════════════════════════ -->
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <h1>Ethan Kunz</h1>
+                <div class="credentials">MBA, B.S. EE</div>
+                <div class="role">Senior Electrical Engineer &nbsp;|&nbsp; Technical Consultant &nbsp;|&nbsp; Expert Witness</div>
+                <div class="portfolio">Portfolio: <a href="https://ee-edk.github.io/EDK-public-resume/">ee-edk.github.io/EDK-public-resume</a></div>
+            </div>
+            <div class="header-right">
+                Expert Profile: IMS Legal
+            </div>
+        </div>
+
+        <div class="page-content">
+
+            <h2>Fee Schedule</h2>
+            <table class="rate-table">
+                <thead>
+                    <tr>
+                        <th>Service Category</th>
+                        <th>Rate</th>
+                        <th>Basis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Initial Case Consultation</td>
+                        <td>Complimentary</td>
+                        <td>Up to 30 min</td>
+                    </tr>
+                    <tr>
+                        <td>Technical Review &amp; Research</td>
+                        <td>$300.00</td>
+                        <td>Per Hour</td>
+                    </tr>
+                    <tr>
+                        <td>Written Reports / Affidavits</td>
+                        <td>$300.00</td>
+                        <td>Per Hour</td>
+                    </tr>
+                    <tr>
+                        <td>Deposition Testimony</td>
+                        <td>$450.00</td>
+                        <td>Per Hour (4-hr min)</td>
+                    </tr>
+                    <tr>
+                        <td>Trial Testimony / Court Appearance</td>
+                        <td>$3,500.00</td>
+                        <td>Per Day</td>
+                    </tr>
+                    <tr>
+                        <td>Travel Time (Non-Local)</td>
+                        <td>$150.00</td>
+                        <td>Per Hour</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Terms &amp; Conditions</h2>
+            <ul class="terms-list">
+                <li><strong>Retainer:</strong> A standard retainer of $3,000.00 is required prior to commencement of technical review or document analysis. All fees are billed against the retainer; additional invoicing occurs upon retainer depletion.</li>
+                <li><strong>Billing Increment:</strong> All hourly services are billed in 15-minute increments.</li>
+                <li><strong>Reimbursable Expenses:</strong> Airfare (Economy or Premium Economy), lodging, ground transportation, and a standard per-diem for meals. Specialized testing equipment or third-party laboratory fees billed at cost with prior approval.</li>
+                <li><strong>Cancellation Policy:</strong> Cancellations for depositions or trial testimony made less than 72 hours in advance are subject to the applicable minimum daily or hourly fee.</li>
+            </ul>
+
+            <h2>Forensic Analysis Capabilities</h2>
+            <div class="forensic-block">
+                Mr. Kunz maintains a fully-equipped professional laboratory for forensic examination of electronic hardware, enabling independent physical evidence examination without reliance on third-party laboratories. Capabilities include: <strong>Saleae Pro 16</strong> multi-channel logic analyzers for digital protocol capture, timing analysis, and signal integrity characterization; <strong>Metcal ultrasonic soldering</strong> and <strong>hot-flow rework stations</strong> for non-destructive component-level inspection, removal, and re-attachment; <strong>4K digital microscope with precision manipulator</strong> for solder joint inspection, PCB defect identification, and photographic documentation of physical evidence; and <strong>high-precision bench instrumentation</strong> (oscilloscopes, multimeters, programmable power supplies) for electrical characterization and fault reproduction. This facility supports failure mode analysis, counterfeit component detection, workmanship assessment per IPC-A-610 criteria, and the reconstruction of electrical fault sequences for litigation support.
+            </div>
+
+            <h2>Contact</h2>
+            <div class="contact-block">
+                <div>
+                    <strong>Ethan Kunz, MBA, B.S. EE</strong><br>
+                    Expert Witness &mdash; Electrical Engineering &amp; Embedded Systems
+                </div>
+                <div style="text-align: right;">
+                    Portfolio: <a href="https://ee-edk.github.io/EDK-public-resume/">ee-edk.github.io/EDK-public-resume</a><br>
+                    Inquiries via IMS Legal or direct correspondence
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page-footer">
+            <span>Expert Witness Packet &mdash; Ethan Kunz, MBA, B.S. EE</span>
+            <span>Page 3 of 3 &mdash; Fee Schedule &amp; Forensic Capabilities</span>
         </div>
     </div>
 
