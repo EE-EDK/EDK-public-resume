@@ -15,6 +15,7 @@ desktop.ini
 *.bak
 
 # Archive files
+archive/
 *.zip
 
 # Generated resume files from builder tool
