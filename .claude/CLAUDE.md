@@ -10,6 +10,11 @@ assets/                         ← Shared media (KCNSC-logo.jpg, office_1.mp4)
 archive/                        ← Superseded versions (read-only)
   2025/                         ← 2025 historical snapshots
   2026/                         ← 2026 historical snapshots
+EXPERT_BIO.md                   ← Expert witness bio (added 2026-05-01, IMS Legal application)
+EXPERT_PACKET.html              ← "Expert Witness Packet" — bio + rate sheet, print-optimized
+IMS_LEGAL_FORM_FIELDS.md        ← Ready-to-paste IMS Legal expert profile form content
+RATE_SHEET.md                   ← Consulting & expert witness fee schedule
+ims-legal-upload/               ← Assembled IMS Legal upload package (packet, headshot, form fields)
 ```
 
 ## Guidelines
