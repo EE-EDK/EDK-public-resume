@@ -32,7 +32,7 @@ This repository is a publicly accessible, static personal resume site (Ethan Kun
 
 ## Commit Rules
 
-See workspace-level protocol at `ENGINEERING-PROJECTS/root `AGENTS.md`` §Git commits.
+See workspace-level protocol at `ENGINEERING-PROJECTS/AGENTS.md` §Commit Rules.
 Summary: do **not** infer "commit and push everything" unless the user explicitly requests it or triggers END SESSION. Given the live-deploy behavior noted above, confirm scope explicitly before any push to `main`.
 
 ## Validation Before Completion
@@ -42,5 +42,5 @@ Summary: do **not** infer "commit and push everything" unless the user explicitl
 
 ## Parent Context
 
-Workspace-level agent rules: `ENGINEERING-PROJECTS/root `AGENTS.md``
+Workspace-level agent rules: `ENGINEERING-PROJECTS/AGENTS.md`
 Technical Editor Protocol v5.4: `ENGINEERING-PROJECTS/templates/technical_editor_protocol_v5.4.md`
