@@ -16,7 +16,7 @@ Read project docs in this order (load only what the task needs):
 
 Load only what is scoped to this project; do **not** import sibling project context.
 
-**Doc precedence (same tier):** `GROK.md` → `AGENTS.md` → `CLAUDE.md` → `GEMINI.md`
+**Doc precedence (same tier):** `GROK.md` → `AGENTS.md` → `CLAUDE.md`
 
 ## Project Identity
 

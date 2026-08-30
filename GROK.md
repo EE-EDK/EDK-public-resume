@@ -18,6 +18,6 @@ The site has no build step and no staging environment. A push to `main` is refle
 
 ## Doc precedence
 
-`GROK.md` → `AGENTS.md` → `CLAUDE.md` → `GEMINI.md` (same tier)
+`GROK.md` → `AGENTS.md` → `CLAUDE.md` (same tier)
 
 Parent context: `ENGINEERING-PROJECTS/GROK.md`
