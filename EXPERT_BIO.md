@@ -26,7 +26,7 @@ Mr. Kunz's opinions are grounded in over ten years of direct, hands-on engineeri
 *   Lead technical and project engineer for multi-million-dollar pulsed power programs
 *   Architected end-to-end pulsed power systems from concept through EDA simulation (LTSpice, Altium) to mission-ready delivery
 *   Spearheaded Li-Fi R&D: 3 patent disclosures, 3 functional prototypes
-*   QRC manufacturing: 30 full-scale systems, 200+ hours testing, 50% deliverable recovery
+*   Quick-reaction manufacturing: 30 full-scale systems; on a separate contract, nearly 200 hours of testing in under two weeks that saved 50% of the deliverable
 *   Rescued high-priority programs by debugging critical firmware across STM32, Renesas RA, and RP2350
 *   Lean Six Sigma (DFSS Green Belt): statistical process control, quality metrics
 
