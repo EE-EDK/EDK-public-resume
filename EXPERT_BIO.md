@@ -17,7 +17,7 @@ Senior Electrical and Embedded Systems Engineer with over a decade of combined i
 *   Standard-of-Care & Design Process Compliance
 
 ## Basis for Expert Opinions
-Mr. Kunz's opinions are grounded in over ten years of direct, hands-on engineering across multiple high-consequence industries: national security systems at Honeywell FM&T / Kansas City National Security Campus, heavy industrial electrical systems at Nucor Corporation, and life-saving device design at Global Rescue Systems. He holds four patent-level innovations — three disclosures accepted by Honeywell in Li-Fi optical communications and software firesets, and one sole-owner patent submission in millimeter-wave radar technology (rights released by Honeywell). His military service as a Biomedical Equipment Technician included forensic-level maintenance, calibration, and failure analysis of FDA-regulated medical devices per 21 CFR Part 820 and MIL-STD requirements. He maintains a professional forensic analysis laboratory equipped with multi-channel logic analyzers, ultrasonic soldering, hot-flow rework stations, and 4K digital microscopy for physical evidence examination of electronic assemblies.
+Mr. Kunz's opinions are grounded in over ten years of direct, hands-on engineering across multiple high-consequence industries: national security systems at Honeywell FM&T / Kansas City National Security Campus, heavy industrial electrical systems at Nucor Corporation, and life-saving device design at Global Rescue Systems. He holds four patent-level innovations — three disclosures accepted by Honeywell in Li-Fi optical communications and software firesets, and one sole-owner invention disclosure in millimeter-wave radar technology (rights released by Honeywell). His military service as a Biomedical Equipment Technician included forensic-level maintenance, calibration, and failure analysis of FDA-regulated medical devices per 21 CFR Part 820 and MIL-STD requirements. He maintains a professional forensic analysis laboratory equipped with multi-channel logic analyzers, ultrasonic soldering, hot-flow rework stations, and 4K digital microscopy for physical evidence examination of electronic assemblies.
 
 ## Professional Experience (Highlights)
 
@@ -69,7 +69,7 @@ Mr. Kunz's opinions are grounded in over ten years of direct, hands-on engineeri
 
 ## Patents & Intellectual Property
 *   3 Patent Disclosures (Honeywell FM&T): Li-Fi optical communications, software firesets
-*   1 Patent Submission (sole owner, rights released by Honeywell): Millimeter-wave radar technology
+*   1 Invention Disclosure (sole owner, rights released by Honeywell): Millimeter-wave radar technology
 *   5 BRAVO Awards for technical excellence (Honeywell FM&T)
 
 ## Forensic Analysis Laboratory

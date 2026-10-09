@@ -14,7 +14,7 @@ Electrical Engineering, Embedded Systems, PCB Design, Firmware Development, C, B
 ## Self-Description
 
 ```
-Senior Electrical and Embedded Systems Engineer with over a decade of experience across national security, heavy industrial, defense, and life-safety engineering. I currently serve as a Senior Electrical Engineer at Honeywell FM&T (Kansas City National Security Campus), where I lead multi-million-dollar pulsed power programs and have authored three patent disclosures in Li-Fi communications and software firesets, with one sole-owner patent submission in millimeter-wave radar technology.
+Senior Electrical and Embedded Systems Engineer with over a decade of experience across national security, heavy industrial, defense, and life-safety engineering. I currently serve as a Senior Electrical Engineer at Honeywell FM&T (Kansas City National Security Campus), where I lead multi-million-dollar pulsed power programs and have authored three patent disclosures in Li-Fi communications and software firesets, with one sole-owner invention disclosure in millimeter-wave radar technology.
 
 My expert opinion spans electronic product liability and failure analysis, embedded firmware defects in safety-critical systems, PCB design and manufacturing defects, high-voltage and pulsed power incidents, industrial electrical accidents and code violations, biomedical equipment malfunctions, patent infringement in the electrical and firmware domain, and industrial automation (PLC/SCADA) failures. I hold working knowledge of IPC-2221A, IPC-A-610, IPC-J-STD-001, IEC 61010-1, MISRA C/C++, NEC/NFPA 70E, MIL-STD series, and FDA 21 CFR Part 820.
 
